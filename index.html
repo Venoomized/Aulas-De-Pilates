@@ -1,48 +1,136 @@
 <!doctype html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LR Studio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LR Studio — Sobre</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
-  <div class="wrap nav">
-    <div class="brand">
-      <img src="coach-lrstudio.jpeg">
-      LR Studio
-    </div>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <img src="coach-lrstudio.jpeg" alt="LR Studio">
+        <span>LR Studio</span>
+      </div>
 
-    <nav class="menu">
-      <a href="packs">Packs</a>
-      <a href="testemunhos">Testemunhos</a>
-      <a href="contacto" class="cta">Contacto</a>
-    </nav>
+      <div class="navRight desktopMenu">
+        <a class="btnGhost" href="packs/">Packs</a>
+        <a class="btnGhost" href="testemunhos/">Testemunhos</a>
+        <a class="btn" href="contacto/">Contacto</a>
+      </div>
 
-    <button class="burger" id="burger">☰</button>
-    <div class="mobile" id="mobile">
-      <a href="packs">Packs</a>
-      <a href="testemunhos">Testemunhos</a>
-      <a href="contacto" class="cta">Contacto</a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <div class="mobileMenu" id="mobileMenu">
+        <a href="packs/">Packs</a>
+        <a href="testemunhos/">Testemunhos</a>
+        <a href="contacto/" class="cta">Contacto</a>
+      </div>
     </div>
   </div>
 </header>
 
-<main class="hero">
-  <div class="wrap">
-    <div class="kicker">Sobre a tua coach</div>
-    <h1>Bem-vinda(o) ao LR Studio</h1>
-    <p class="muted">
-      Pilates simples, progressivo e sustentável para te sentires mais forte,
-      com melhor postura e menos dores no dia-a-dia.
-    </p>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="heroGrid">
+        <div>
+          <div class="kicker">Sobre a tua coach</div>
+          <h1>Bem-vinda(o) ao LR Studio</h1>
+          <p class="muted" style="font-size:16px;line-height:1.55;margin:0 0 16px 0;max-width:820px">
+            Aqui o foco é criar uma rotina sustentável, com treinos que encaixam na tua vida.
+            O Pilates ajuda-te a melhorar postura, mobilidade, força e bem-estar — sem pressão e ao teu ritmo.
+          </p>
 
-    <div style="margin-top:20px">
-      <a class="btn" href="packs">Ver packs</a>
+          <div class="btnRow">
+            <a class="btn" href="packs/">Ver packs</a>
+            <a class="btnGhost" href="contacto/">Falar comigo</a>
+          </div>
+
+          <div class="pillRow">
+            <span class="pill">Pilates</span>
+            <span class="pill">Mobilidade</span>
+            <span class="pill">Postura</span>
+            <span class="pill">Core</span>
+          </div>
+
+          <div class="section">
+            <div class="grid2">
+              <div class="card">
+                <p class="miniTitle">O meu método</p>
+                <ul class="list">
+                  <li>Progressivo e adaptável (iniciantes)</li>
+                  <li>Treinos curtos e eficazes</li>
+                  <li>Foco em postura, mobilidade e core</li>
+                </ul>
+              </div>
+
+              <div class="card white">
+                <p class="miniTitle">Contacto rápido</p>
+                <p class="muted" style="margin:0;line-height:1.55">
+                  Se tens dúvidas sobre qual pack escolher, envia mensagem.
+                </p>
+                <div class="btnRow">
+                  <a class="btn" id="waGeral" target="_blank" rel="noopener">WhatsApp</a>
+                  <a class="btnGhost" id="insta" target="_blank" rel="noopener">Instagram</a>
+                </div>
+                <p class="small muted" style="margin:10px 0 0 0">
+                  Resposta rápida (normalmente no próprio dia).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card glow">
+          <p class="miniTitle">O que vais sentir</p>
+          <ul class="list">
+            <li>Mais estabilidade do core e menos tensão nas costas</li>
+            <li>Melhor postura e mobilidade</li>
+            <li>Mais energia e leveza no dia a dia</li>
+          </ul>
+          <div style="height:10px"></div>
+          <p class="small muted" style="margin:0">
+            Queres começar já? Vê os packs e escolhe o teu nível.
+          </p>
+          <div class="btnRow">
+            <a class="btn" href="packs/">Ver packs</a>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="card">
+        <h2 class="h2">Perguntas rápidas</h2>
+        <div class="faq">
+          <details>
+            <summary>É para iniciantes?</summary>
+            <div class="muted" style="margin-top:8px;line-height:1.55">
+              Sim. O plano é progressivo e inclui instruções para adaptar exercícios.
+            </div>
+          </details>
+          <details>
+            <summary>Preciso de material?</summary>
+            <div class="muted" style="margin-top:8px;line-height:1.55">
+              Um tapete chega. Banda elástica é opcional.
+            </div>
+          </details>
+          <details>
+            <summary>Como funciona o pagamento?</summary>
+            <div class="muted" style="margin-top:8px;line-height:1.55">
+              Pelo Stripe (Cartão e, se estiver ativo, MB WAY no checkout).
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
