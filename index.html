@@ -1,83 +1,54 @@
 <!doctype html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LR Studio — Sobre</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LR Studio</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
-  <div class="wrap">
-    <div class="nav">
-      <div class="brand">
-        <img src="coach-lrstudio.jpeg" alt="LR Studio">
-        <span>LR Studio</span>
-      </div>
+  <div class="wrap nav">
+    <div class="brand">
+      <img src="coach-lrstudio.jpeg">
+      LR Studio
+    </div>
 
-      <div class="navRight desktopMenu">
-        <a class="btnGhost" href="packs.html">Packs</a>
-        <a class="btnGhost" href="testemunhos.html">Testemunhos</a>
-        <a class="btn" href="contacto.html">Contacto</a>
-      </div>
+    <nav class="menu">
+      <a href="packs">Packs</a>
+      <a href="testemunhos">Testemunhos</a>
+      <a href="contacto" class="cta">Contacto</a>
+    </nav>
 
-      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
-      <div class="mobileMenu" id="mobileMenu">
-        <a href="packs.html">Packs</a>
-        <a href="testemunhos.html">Testemunhos</a>
-        <a href="contacto.html" class="cta">Contacto</a>
-      </div>
+    <button class="burger" id="burger">☰</button>
+    <div class="mobile" id="mobile">
+      <a href="packs">Packs</a>
+      <a href="testemunhos">Testemunhos</a>
+      <a href="contacto" class="cta">Contacto</a>
     </div>
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <div class="kicker">Sobre a tua coach</div>
-      <h1>Bem-vinda(o) ao LR Studio</h1>
-      <p class="muted" style="max-width:760px;line-height:1.6">
-        Aqui o foco é criar uma rotina sustentável, com treinos que encaixam na tua vida.
-        O Pilates ajuda-te a melhorar postura, mobilidade, força e bem-estar — sem pressão e ao teu ritmo.
-      </p>
+<main class="hero">
+  <div class="wrap">
+    <div class="kicker">Sobre a tua coach</div>
+    <h1>Bem-vinda(o) ao LR Studio</h1>
+    <p class="muted">
+      Pilates simples, progressivo e sustentável para te sentires mais forte,
+      com melhor postura e menos dores no dia-a-dia.
+    </p>
 
-      <div class="pillRow">
-        <span class="pill">Pilates</span>
-        <span class="pill">Mobilidade</span>
-        <span class="pill">Postura</span>
-        <span class="pill">Core</span>
-      </div>
-
-      <div class="section">
-        <div class="grid2">
-          <div class="card">
-            <strong>O meu método</strong>
-            <p class="muted" style="line-height:1.6">
-              Progressivo, simples e adaptável. O objetivo é consistência e resultados reais,
-              com treinos curtos e eficazes.
-            </p>
-            <a class="btn" href="packs.html">Ver packs</a>
-          </div>
-
-          <div class="card">
-            <strong>Queres falar comigo?</strong>
-            <p class="muted" style="line-height:1.6">
-              Se tens dúvidas sobre qual pack escolher, manda mensagem.
-            </p>
-            <div class="btnRow">
-              <a class="btn" id="waGeral" target="_blank" rel="noopener">WhatsApp</a>
-              <a class="btnGhost" id="insta" target="_blank" rel="noopener">Instagram</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div style="margin-top:20px">
+      <a class="btn" href="packs">Ver packs</a>
     </div>
-  </section>
+  </div>
 </main>
 
-<footer><div class="wrap" id="footer"></div></footer>
+<footer>
+  <div class="wrap" id="footer"></div>
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>
