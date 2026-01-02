@@ -11,22 +11,24 @@
 <header>
   <div class="wrap">
     <div class="nav">
-      <div class="brand">
+      <a class="brand" href="../">
         <img src="../coach-lrstudio.jpeg" alt="LR Studio">
         <span>LR Studio</span>
-      </div>
+      </a>
 
       <div class="navRight desktopMenu">
-        <a class="btnGhost" href="../packs/">Packs</a>
-        <a class="btnGhost" href="../testemunhos/">Testemunhos</a>
-        <a class="btn" href="../contacto/">Contacto</a>
+        <a class="linkPill" data-nav="home" href="../">Início</a>
+        <a class="linkPill" data-nav="packs" href="../packs/">Packs</a>
+        <a class="linkPill" data-nav="testemunhos" href="../testemunhos/">Testemunhos</a>
+        <a class="btn" data-nav="contacto" href="../contacto/">Contacto</a>
       </div>
 
       <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
       <div class="mobileMenu" id="mobileMenu">
-        <a href="../packs/">Packs</a>
-        <a href="../testemunhos/">Testemunhos</a>
-        <a href="../contacto/" class="cta">Contacto</a>
+        <a data-nav="home" href="../">Início</a>
+        <a data-nav="packs" href="../packs/">Packs</a>
+        <a data-nav="testemunhos" href="../testemunhos/">Testemunhos</a>
+        <a data-nav="contacto" href="../contacto/" class="cta">Contacto</a>
       </div>
     </div>
   </div>
@@ -35,20 +37,21 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="kicker">Fala comigo</div>
-      <h1>Contacto</h1>
-      <p class="muted" style="max-width:820px;line-height:1.55">
+      <div class="kicker reveal">Fala comigo</div>
+      <h1 class="reveal">Contacto</h1>
+      <p class="muted reveal" style="max-width:820px;line-height:1.55">
         Tens dúvidas? Queres saber qual pack é melhor para ti? Envia mensagem e eu ajudo.
       </p>
 
       <div class="section">
         <div class="grid2">
-          <div class="card white">
+          <div class="card white reveal">
             <h2 style="margin:0;font-size:18px;font-weight:950">WhatsApp</h2>
             <p class="muted" style="line-height:1.55">Resposta rápida para dúvidas e recomendações.</p>
             <a class="btn" id="waGeral" target="_blank" rel="noopener">Abrir WhatsApp</a>
           </div>
-          <div class="card white">
+
+          <div class="card white reveal">
             <h2 style="margin:0;font-size:18px;font-weight:950">Instagram</h2>
             <p class="muted" style="line-height:1.55">Conteúdos, aulas e novidades.</p>
             <a class="btnGhost" id="insta" target="_blank" rel="noopener">Abrir Instagram</a>
@@ -57,7 +60,7 @@
 
         <div style="height:14px"></div>
 
-        <div class="card">
+        <div class="card reveal">
           <h2 class="h2">Pronta(o) para começar?</h2>
           <p class="muted">Vê os packs e escolhe o plano ideal.</p>
           <div class="btnRow">
@@ -73,6 +76,8 @@
     </div>
   </section>
 </main>
+
+<button id="toTop" aria-label="Voltar ao topo">Topo ↑</button>
 
 <footer>
   <div class="wrap" id="footer"></div>
