@@ -16,19 +16,19 @@
       --good:#16a34a;
       --badgeBg:#e9d5ff;
       --badgeBd:#d8b4fe;
+      --dark:#0f172a;
     }
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);}
     a{color:inherit}
     .wrap{max-width:1050px;margin:0 auto;padding:0 18px;}
     header{
-      position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(8px);
+      position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);
       border-bottom:1px solid var(--border);z-index:50;
     }
     .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;}
     .brand{font-weight:950;letter-spacing:.2px}
     .navRight{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-    .lang select{padding:8px 10px;border:1px solid var(--border);border-radius:12px;background:#fff}
     .btn{
       display:inline-flex;align-items:center;justify-content:center;
       background:var(--accent);color:#fff;text-decoration:none;
@@ -42,10 +42,10 @@
     }
     .btnPay{
       display:inline-flex;align-items:center;justify-content:center;
-      background:#0f172a;color:#fff;text-decoration:none;
+      background:var(--dark);color:#fff;text-decoration:none;
       padding:10px 14px;border-radius:12px;font-weight:900;border:0;cursor:pointer;
     }
-    .btnPay:hover{filter:brightness(1.05)}
+    .btnPay:hover{filter:brightness(1.06)}
     .btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 
     .hero{padding:38px 0 22px 0;}
@@ -107,22 +107,23 @@
     .quote .stars{font-weight:950;letter-spacing:1px}
     .quote .txt{margin:8px 0;color:#334155;line-height:1.45}
     .quote .who{margin-top:10px;color:var(--muted);font-size:13px}
-    .pillWarn{
-      display:inline-block;
-      border:1px dashed var(--border);
-      background:#fff;
-      padding:8px 10px;
-      border-radius:999px;
-      font-size:12px;
-      color:var(--muted);
-      margin-top:10px;
-    }
 
     .faq details{border:1px solid var(--border);border-radius:14px;padding:12px 12px;background:#fff}
     .faq details+details{margin-top:10px}
     .faq summary{font-weight:950;cursor:pointer}
 
     footer{border-top:1px solid var(--border);padding:20px 0;color:var(--muted);font-size:13px}
+
+    dialog{border:1px solid var(--border);border-radius:16px;max-width:640px;width:92vw;}
+    dialog::backdrop{background:rgba(0,0,0,.35)}
+    .dlgTop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+    .x{border:1px solid var(--border);background:#fff;border-radius:12px;padding:8px 10px;cursor:pointer;font-weight:900}
+    .mbBox{background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px}
+    .mbRow{display:flex;justify-content:space-between;gap:10px;padding:6px 0}
+    .mbRow .k{color:var(--muted)}
+    .copyBtn{border:1px solid var(--border);background:#fff;border-radius:12px;padding:10px 12px;font-weight:900;cursor:pointer}
+    .copyBtn:hover{filter:brightness(0.98)}
+    .ok{color:var(--good);font-weight:900;margin-top:8px;display:none}
   </style>
 </head>
 <body>
@@ -130,17 +131,11 @@
 <header>
   <div class="wrap">
     <div class="nav">
-      <div class="brand" id="brand">Pilates Essencial</div>
+      <div class="brand">Pilates Essencial</div>
       <div class="navRight">
-        <a class="btnGhost" href="#packs" id="navPacks">Packs</a>
-        <a class="btnGhost" href="#testimonials" id="navTestimonials">Testemunhos</a>
-        <a class="btn" href="#contact" id="navContact">Contacto</a>
-        <div class="lang">
-          <select id="lang">
-            <option value="pt">PT</option>
-            <option value="fr">FR</option>
-          </select>
-        </div>
+        <a class="btnGhost" href="#packs">Packs</a>
+        <a class="btnGhost" href="#testemunhos">Testemunhos</a>
+        <a class="btn" href="#contacto">Contacto</a>
       </div>
     </div>
   </div>
@@ -151,30 +146,33 @@
     <div class="wrap">
       <div class="heroGrid">
         <div>
-          <div class="kicker" id="kicker">Plano de Pilates</div>
-          <h1 id="h1">Pilates Essencial — 8 semanas para te sentires mais forte e leve</h1>
-          <p class="sub" id="sub">
+          <div class="kicker">Plano de Pilates</div>
+          <h1>Pilates Essencial — 8 semanas para te sentires mais forte e leve</h1>
+          <p class="sub">
             Treinos simples em casa, guiados passo-a-passo. Ideal para melhorar postura, mobilidade e fortalecer o core.
           </p>
           <div class="btnRow">
-            <a class="btn" href="#packs" id="cta1">Ver packs</a>
-            <a class="btnGhost" href="#faq" id="cta2">Perguntas</a>
+            <a class="btn" href="#packs">Ver packs</a>
+            <a class="btnGhost" href="#faq">Perguntas</a>
           </div>
           <div class="pillRow">
-            <span class="pill" id="pill1">Em casa</span>
-            <span class="pill" id="pill2">20–35 min</span>
-            <span class="pill" id="pill3">3x / semana</span>
-            <span class="pill" id="pill4">Nível: iniciantes</span>
+            <span class="pill">Em casa</span>
+            <span class="pill">20–35 min</span>
+            <span class="pill">3x / semana</span>
+            <span class="pill">Nível: iniciantes</span>
           </div>
         </div>
 
         <div class="card">
-          <p class="miniTitle" id="quickTitle">O que vais conseguir</p>
-          <ul class="list" id="quickList"></ul>
+          <p class="miniTitle">O que vais conseguir</p>
+          <ul class="list">
+            <li>Mais estabilidade do core e menos tensão nas costas</li>
+            <li>Melhor postura e mobilidade</li>
+            <li>Rotina sustentável e progressiva</li>
+            <li>Mais energia no dia a dia</li>
+          </ul>
           <div style="height:10px"></div>
-          <div class="small muted" id="quickNote">
-            Sem pressão: progressivo e adaptável ao teu ritmo.
-          </div>
+          <div class="small muted">Sem pressão: progressivo e adaptável ao teu ritmo.</div>
         </div>
       </div>
     </div>
@@ -182,164 +180,144 @@
 
   <section class="section" id="packs">
     <div class="wrap">
-      <h2 class="h2" id="packsTitle">Escolhe o teu pack</h2>
-      <p class="muted" id="packsSub">
-        Dois níveis — autónomo ou com acompanhamento — para se adaptar ao teu objetivo.
-      </p>
+      <h2 class="h2">Escolhe o teu pack</h2>
+      <p class="muted">Dois níveis — autónomo ou com acompanhamento — para se adaptar ao teu objetivo.</p>
 
       <div class="grid2" style="margin-top:14px">
         <!-- Pack 1 -->
         <div class="card">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-            <h3 style="margin:0;font-size:18px;font-weight:950" id="p1Name">Pilates Essencial</h3>
-          </div>
+          <h3 style="margin:0;font-size:18px;font-weight:950">Pilates Essencial</h3>
 
-          <div class="price" id="p1Price">39€</div>
-          <div class="per" id="p1Per">Acesso 8 semanas</div>
+          <div class="price">39€</div>
+          <div class="per">Acesso 8 semanas</div>
 
           <div class="whoBox">
-            <div class="whoTitle" id="p1WhoTitle">Para quem é</div>
-            <ul class="whoList" id="p1Who"></ul>
+            <div class="whoTitle">Para quem é</div>
+            <ul class="whoList">
+              <li>Para quem quer começar Pilates com segurança</li>
+              <li>Para quem prefere treinar de forma autónoma</li>
+              <li>Para quem quer melhorar postura, mobilidade e core</li>
+            </ul>
           </div>
 
           <div style="margin-top:12px">
-            <div><span class="check">✓</span><span id="p1i1">Plano 8 semanas (3 treinos/semana)</span></div>
-            <div style="margin-top:8px"><span class="check">✓</span><span id="p1i2">Vídeos guiados + calendário</span></div>
-            <div style="margin-top:8px"><span class="check">✓</span><span id="p1i3">PDF aquecimento + alongamentos</span></div>
-            <div style="margin-top:8px"><span class="check">✓</span><span id="p1i4">Acesso simples no telemóvel</span></div>
+            <div><span class="check">✓</span>Plano 8 semanas (3 treinos/semana)</div>
+            <div style="margin-top:8px"><span class="check">✓</span>Vídeos guiados + calendário</div>
+            <div style="margin-top:8px"><span class="check">✓</span>PDF aquecimento + alongamentos</div>
+            <div style="margin-top:8px"><span class="check">✓</span>Acesso simples no telemóvel</div>
           </div>
 
-          <div style="height:14px"></div>
           <div class="btnRow">
-            <a class="btn" id="p1Btn" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btnPay" id="p1Pay" target="_blank" rel="noopener">Pagar 39€</a>
+            <a class="btn" id="waEssencial" target="_blank" rel="noopener">WhatsApp</a>
+            <button class="btnPay" id="mbEssencial">Pagar por MB WAY</button>
           </div>
-          <div class="small muted" style="margin-top:10px" id="p1Small">
-            Ideal se queres começar já, com autonomia.
-          </div>
+
+          <div class="small muted" style="margin-top:10px">Ideal se queres começar já, com autonomia.</div>
         </div>
 
         <!-- Pack 2 -->
         <div class="card" style="border:2px solid var(--badgeBd)">
-          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
-            <h3 style="margin:0;font-size:18px;font-weight:950" id="p2Name">
-              Pilates Essencial Plus <span class="badge" id="best">Mais escolhido</span>
-            </h3>
-          </div>
+          <h3 style="margin:0;font-size:18px;font-weight:950">
+            Pilates Essencial Plus <span class="badge">Mais escolhido</span>
+          </h3>
 
-          <div class="price" id="p2Price">79€</div>
-          <div class="per" id="p2Per">Acesso 8 semanas + acompanhamento</div>
+          <div class="price">79€</div>
+          <div class="per">Acesso 8 semanas + acompanhamento</div>
 
           <div class="whoBox">
-            <div class="whoTitle" id="p2WhoTitle">Para quem é</div>
-            <ul class="whoList" id="p2Who"></ul>
+            <div class="whoTitle">Para quem é</div>
+            <ul class="whoList">
+              <li>Para quem quer resultados mais rápidos</li>
+              <li>Para quem precisa de motivação e acompanhamento</li>
+              <li>Para quem quer um plano adaptado ao seu corpo</li>
+            </ul>
           </div>
 
           <div style="margin-top:12px">
-            <div><span class="check">✓</span><span id="p2i1">Tudo do Essencial</span></div>
-            <div style="margin-top:8px"><span class="check">✓</span><span id="p2i2">Plano adaptado (objetivo + nível)</span></div>
-            <div style="margin-top:8px"><span class="check">✓</span><span id="p2i3">Check-in semanal (mensagem)</span></div>
-            <div style="margin-top:8px"><span class="check">✓</span><span id="p2i4">Suporte prioritário (24h)</span></div>
+            <div><span class="check">✓</span>Tudo do Essencial</div>
+            <div style="margin-top:8px"><span class="check">✓</span>Plano adaptado (objetivo + nível)</div>
+            <div style="margin-top:8px"><span class="check">✓</span>Check-in semanal (mensagem)</div>
+            <div style="margin-top:8px"><span class="check">✓</span>Suporte prioritário (24h)</div>
           </div>
 
-          <div style="height:14px"></div>
           <div class="btnRow">
-            <a class="btn" id="p2Btn" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btnPay" id="p2Pay" target="_blank" rel="noopener">Pagar 79€</a>
+            <a class="btn" id="waPlus" target="_blank" rel="noopener">WhatsApp</a>
+            <button class="btnPay" id="mbPlus">Pagar por MB WAY</button>
           </div>
-          <div class="small muted" style="margin-top:10px" id="p2Small">
-            Para quem quer mais motivação e um plano ajustado ao seu corpo.
-          </div>
+
+          <div class="small muted" style="margin-top:10px">Para quem quer mais motivação e um plano ajustado ao seu corpo.</div>
         </div>
       </div>
 
-      <div class="pillWarn" id="payNote">
-        Pagamento: ligações Stripe (substitui pelos teus links).
-      </div>
+      <p class="muted small" style="margin-top:10px">
+        Ao pagar por MB WAY: faz o pagamento e envia comprovativo no WhatsApp/Instagram.
+      </p>
     </div>
   </section>
 
-  <section class="section" id="testimonials">
+  <section class="section" id="testemunhos">
     <div class="wrap">
-      <h2 class="h2" id="testiTitle">Testemunhos</h2>
-      <p class="muted" id="testiSub">Exemplos de frases (para substituir por feedback real quando tiveres).</p>
-
+      <h2 class="h2">Testemunhos</h2>
       <div class="testiGrid">
         <div class="quote">
           <div class="stars">★★★★★</div>
-          <div class="txt" id="t1">“Em 2 semanas já senti a postura mais ‘direita’ e menos tensão lombar. As aulas são fáceis de seguir.”</div>
-          <div class="who" id="t1w">— Exemplo: Cliente (Pilates Essencial)</div>
+          <div class="txt">“Em 2 semanas já senti a postura mais direita e menos tensão lombar. As aulas são fáceis de seguir.”</div>
+          <div class="who">— Cliente</div>
         </div>
         <div class="quote">
           <div class="stars">★★★★★</div>
-          <div class="txt" id="t2">“O Plus valeu muito: o check-in semanal deu-me motivação e o plano ficou mesmo adaptado ao meu nível.”</div>
-          <div class="who" id="t2w">— Exemplo: Cliente (Essencial Plus)</div>
+          <div class="txt">“Sessões curtas mas eficazes. Consigo encaixar na rotina e sinto o core mais forte.”</div>
+          <div class="who">— Cliente</div>
         </div>
         <div class="quote">
           <div class="stars">★★★★★</div>
-          <div class="txt" id="t3">“Sessões curtas mas eficazes. Consigo encaixar na rotina e sinto o core mais forte.”</div>
-          <div class="who" id="t3w">— Exemplo: Cliente</div>
+          <div class="txt">“O acompanhamento ajudou-me a manter a consistência. Senti melhorias na mobilidade e postura.”</div>
+          <div class="who">— Cliente</div>
         </div>
-      </div>
-
-      <div class="pillWarn" id="testiNote">
-        ⚠️ Importante: substitui por testemunhos reais para manter confiança.
       </div>
     </div>
   </section>
 
   <section class="section" id="faq">
     <div class="wrap">
-      <h2 class="h2" id="faqTitle">Perguntas frequentes</h2>
+      <h2 class="h2">Perguntas frequentes</h2>
 
       <div class="faq" style="margin-top:12px">
         <details>
-          <summary id="q1">Preciso de material?</summary>
-          <div class="muted" style="margin-top:8px" id="a1">
-            Não. Um tapete já chega. Se tiveres, uma banda elástica é opcional.
-          </div>
+          <summary>Preciso de material?</summary>
+          <div class="muted" style="margin-top:8px">Não. Um tapete já chega. Se tiveres, uma banda elástica é opcional.</div>
         </details>
-
         <details>
-          <summary id="q2">É para iniciantes?</summary>
-          <div class="muted" style="margin-top:8px" id="a2">
-            Sim. O plano é progressivo e inclui instruções para adaptar os exercícios.
-          </div>
+          <summary>É para iniciantes?</summary>
+          <div class="muted" style="margin-top:8px">Sim. O plano é progressivo e inclui instruções para adaptar os exercícios.</div>
         </details>
-
         <details>
-          <summary id="q3">Como recebo o plano?</summary>
-          <div class="muted" style="margin-top:8px" id="a3">
-            Recebes um link com acesso aos conteúdos e calendário (no telemóvel ou computador).
-          </div>
+          <summary>Como recebo o plano?</summary>
+          <div class="muted" style="margin-top:8px">Recebes um link com acesso aos conteúdos e calendário (no telemóvel ou computador).</div>
         </details>
-
         <details>
-          <summary id="q4">Posso falar contigo antes de comprar?</summary>
-          <div class="muted" style="margin-top:8px" id="a4">
-            Claro. Envia mensagem e eu ajudo-te a escolher o pack ideal.
-          </div>
+          <summary>Posso falar contigo antes de comprar?</summary>
+          <div class="muted" style="margin-top:8px">Claro. Envia mensagem e eu ajudo-te a escolher o pack ideal.</div>
         </details>
       </div>
     </div>
   </section>
 
-  <section class="section" id="contact">
+  <section class="section" id="contacto">
     <div class="wrap">
       <div class="card">
-        <h2 class="h2" id="contactTitle">Pronta(o) para começar?</h2>
-        <p class="muted" id="contactSub">
-          Clica no WhatsApp e envia-me mensagem. Eu respondo e combinamos o melhor pack para ti.
+        <h2 class="h2">Contacto</h2>
+        <p class="muted">
+          Envia mensagem no WhatsApp ou Instagram. Eu respondo e combinamos o melhor pack para ti.
         </p>
 
         <div class="btnRow">
-          <a class="btn" id="whatsBtn" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btnGhost" id="instaBtn" href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-          <a class="btnGhost" id="mailBtn" href="mailto:teuemail@exemplo.com">Email</a>
+          <a class="btn" id="waGeral" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btnGhost" id="insta" target="_blank" rel="noopener">Instagram</a>
         </div>
 
-        <p class="muted small" style="margin-top:12px" id="smallNote">
-          *Podes mudar textos, preços e links quando quiseres.
+        <p class="muted small" style="margin-top:12px">
+          *Se pagares por MB WAY, envia o comprovativo e o nome do pack.
         </p>
       </div>
     </div>
@@ -350,309 +328,112 @@
   <div class="wrap" id="footer"></div>
 </footer>
 
-<script>
-  // WhatsApp number (no +, no spaces)
-  const WHATSAPP = "351911918049";
+<!-- MB WAY Modal -->
+<dialog id="mbDlg">
+  <div class="dlgTop">
+    <strong id="mbTitle">Pagamento por MB WAY</strong>
+    <button class="x" id="closeDlg">Fechar</button>
+  </div>
 
-  // ✅ Replace these with your Stripe Payment Links
-  const STRIPE_ESSENCIAL = "https://buy.stripe.com/REPLACE_39";
-  const STRIPE_PLUS      = "https://buy.stripe.com/REPLACE_79";
+  <div class="mbBox">
+    <div class="mbRow"><div class="k">Pack</div><div id="mbPack">—</div></div>
+    <div class="mbRow"><div class="k">Valor</div><div id="mbAmount">—</div></div>
+    <div class="mbRow"><div class="k">Número MB WAY</div><div id="mbNumber">—</div></div>
+    <div class="mbRow"><div class="k">Titular (opcional)</div><div id="mbName">—</div></div>
+
+    <div class="btnRow" style="margin-top:12px">
+      <button class="copyBtn" id="copyNumber">Copiar número</button>
+      <button class="copyBtn" id="copyMsg">Copiar mensagem</button>
+      <a class="btn" id="paidBtn" target="_blank" rel="noopener">Enviar “Já paguei”</a>
+    </div>
+    <div class="ok" id="copiedOk">Copiado ✅</div>
+
+    <p class="muted small" style="margin-top:12px">
+      Faz o pagamento no MB WAY e depois envia comprovativo no WhatsApp/Instagram.
+    </p>
+  </div>
+</dialog>
+
+<script>
+  // WhatsApp do contacto (sem + e sem espaços)
+  const WHATSAPP_CONTACT = "351911918049";
+
+  // Instagram
+  const INSTAGRAM_URL = "https://www.instagram.com/lrstudio_pt?ighs=dWx2Yng0MWw4bWU4";
+
+  // 🔴 Preenche aqui com o MB WAY do dono do negócio (sem espaços). Ex: "3519XXXXXXXX"
+  const MBWAY_NUMBER = "3519XXXXXXXX";
+
+  // (Opcional) nome do titular para aparecer
+  const MBWAY_HOLDER = "LR Studio";
 
   function waLink(message){
-    return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(message);
+    return "https://wa.me/" + WHATSAPP_CONTACT + "?text=" + encodeURIComponent(message);
   }
 
-  const T = {
-    pt:{
-      brand:"Pilates Essencial",
-      navPacks:"Packs",
-      navTestimonials:"Testemunhos",
-      navContact:"Contacto",
-      kicker:"Plano de Pilates",
-      h1:"Pilates Essencial — 8 semanas para te sentires mais forte e leve",
-      sub:"Treinos simples em casa, guiados passo-a-passo. Ideal para melhorar postura, mobilidade e fortalecer o core.",
-      cta1:"Ver packs",
-      cta2:"Perguntas",
-      pill1:"Em casa",
-      pill2:"20–35 min",
-      pill3:"3x / semana",
-      pill4:"Nível: iniciantes",
-      quickTitle:"O que vais conseguir",
-      quickList:[
-        "Mais estabilidade do core e menos tensão nas costas",
-        "Melhor postura e mobilidade",
-        "Rotina sustentável e progressiva",
-        "Mais energia no dia a dia"
-      ],
-      quickNote:"Sem pressão: progressivo e adaptável ao teu ritmo.",
+  // WhatsApp links
+  document.getElementById("waEssencial").href = waLink("Olá! Quero o pack Pilates Essencial (39€).");
+  document.getElementById("waPlus").href      = waLink("Olá! Quero o pack Pilates Essencial Plus (79€).");
+  document.getElementById("waGeral").href     = waLink("Olá! Quero saber mais sobre os packs Pilates Essencial.");
 
-      packsTitle:"Escolhe o teu pack",
-      packsSub:"Dois níveis — autónomo ou com acompanhamento — para se adaptar ao teu objetivo.",
+  // Instagram
+  document.getElementById("insta").href = INSTAGRAM_URL;
 
-      p1Name:"Pilates Essencial",
-      p1Price:"39€",
-      p1Per:"Acesso 8 semanas",
-      p1WhoTitle:"Para quem é",
-      p1Who:[
-        "Para quem quer começar Pilates com segurança",
-        "Para quem prefere treinar de forma autónoma",
-        "Para quem quer melhorar postura, mobilidade e core"
-      ],
-      p1i1:"Plano 8 semanas (3 treinos/semana)",
-      p1i2:"Vídeos guiados + calendário",
-      p1i3:"PDF aquecimento + alongamentos",
-      p1i4:"Acesso simples no telemóvel",
-      p1Btn:"WhatsApp",
-      p1Pay:"Pagar 39€",
-      p1Small:"Ideal se queres começar já, com autonomia.",
+  // Footer
+  const year = new Date().getFullYear();
+  document.getElementById("footer").textContent = `© ${year} LR Studio — Todos os direitos reservados.`;
 
-      p2Name:"Pilates Essencial Plus",
-      best:"Mais escolhido",
-      p2Price:"79€",
-      p2Per:"Acesso 8 semanas + acompanhamento",
-      p2WhoTitle:"Para quem é",
-      p2Who:[
-        "Para quem quer resultados mais rápidos",
-        "Para quem precisa de motivação e acompanhamento",
-        "Para quem quer um plano adaptado ao seu corpo"
-      ],
-      p2i1:"Tudo do Essencial",
-      p2i2:"Plano adaptado (objetivo + nível)",
-      p2i3:"Check-in semanal (mensagem)",
-      p2i4:"Suporte prioritário (24h)",
-      p2Btn:"WhatsApp",
-      p2Pay:"Pagar 79€",
-      p2Small:"Para quem quer mais motivação e um plano ajustado ao seu corpo.",
+  // MB WAY modal logic
+  const dlg = document.getElementById("mbDlg");
+  const mbPack = document.getElementById("mbPack");
+  const mbAmount = document.getElementById("mbAmount");
+  const mbNumber = document.getElementById("mbNumber");
+  const mbName = document.getElementById("mbName");
+  const copiedOk = document.getElementById("copiedOk");
+  const paidBtn = document.getElementById("paidBtn");
 
-      payNote:"Pagamento: ligações Stripe (substitui pelos teus links).",
+  let currentMsg = "";
 
-      testiTitle:"Testemunhos",
-      testiSub:"Exemplos de frases (para substituir por feedback real quando tiveres).",
-      t1:"“Em 2 semanas já senti a postura mais ‘direita’ e menos tensão lombar. As aulas são fáceis de seguir.”",
-      t1w:"— Exemplo: Cliente (Pilates Essencial)",
-      t2:"“O Plus valeu muito: o check-in semanal deu-me motivação e o plano ficou mesmo adaptado ao meu nível.”",
-      t2w:"— Exemplo: Cliente (Essencial Plus)",
-      t3:"“Sessões curtas mas eficazes. Consigo encaixar na rotina e sinto o core mais forte.”",
-      t3w:"— Exemplo: Cliente",
-      testiNote:"⚠️ Importante: substitui por testemunhos reais para manter confiança.",
+  function openMB(pack, amount){
+    mbPack.textContent = pack;
+    mbAmount.textContent = amount;
+    mbNumber.textContent = MBWAY_NUMBER;
+    mbName.textContent = MBWAY_HOLDER || "—";
 
-      faqTitle:"Perguntas frequentes",
-      q1:"Preciso de material?",
-      a1:"Não. Um tapete já chega. Se tiveres, uma banda elástica é opcional.",
-      q2:"É para iniciantes?",
-      a2:"Sim. O plano é progressivo e inclui instruções para adaptar os exercícios.",
-      q3:"Como recebo o plano?",
-      a3:"Recebes um link com acesso aos conteúdos e calendário (no telemóvel ou computador).",
-      q4:"Posso falar contigo antes de comprar?",
-      a4:"Claro. Envia mensagem e eu ajudo-te a escolher o pack ideal.",
+    currentMsg = `Pagamento MB WAY - ${pack} - ${amount}. Nome: ____`;
+    paidBtn.href = waLink("Olá! Já paguei por MB WAY. " + currentMsg + " (Vou enviar o comprovativo.)");
 
-      contactTitle:"Pronta(o) para começar?",
-      contactSub:"Clica no WhatsApp e envia-me mensagem. Eu respondo e combinamos o melhor pack para ti.",
-      smallNote:"*Podes mudar textos, preços e links quando quiseres.",
+    copiedOk.style.display = "none";
+    dlg.showModal();
+  }
 
-      footerRights:"Todos os direitos reservados."
-    },
+  document.getElementById("mbEssencial").addEventListener("click", ()=> openMB("Pilates Essencial", "39€"));
+  document.getElementById("mbPlus").addEventListener("click", ()=> openMB("Pilates Essencial Plus", "79€"));
 
-    fr:{
-      brand:"Pilates Essentiel",
-      navPacks:"Packs",
-      navTestimonials:"Avis",
-      navContact:"Contact",
-      kicker:"Programme Pilates",
-      h1:"Pilates Essentiel — 8 semaines pour te sentir plus forte et plus légère",
-      sub:"Des séances simples à la maison, guidées pas à pas. Idéal pour améliorer la posture, la mobilité et renforcer le centre (core).",
-      cta1:"Voir les packs",
-      cta2:"Questions",
-      pill1:"À la maison",
-      pill2:"20–35 min",
-      pill3:"3x / semaine",
-      pill4:"Niveau : débutant",
-      quickTitle:"Ce que tu vas obtenir",
-      quickList:[
-        "Plus de stabilité du centre et moins de tensions",
-        "Meilleure posture et mobilité",
-        "Routine progressive et durable",
-        "Plus d’énergie au quotidien"
-      ],
-      quickNote:"Sans pression : progressif et adaptable à ton rythme.",
+  document.getElementById("closeDlg").addEventListener("click", ()=> dlg.close());
 
-      packsTitle:"Choisis ton pack",
-      packsSub:"Deux niveaux — autonome ou avec accompagnement — selon ton objectif.",
+  function flashCopied(){
+    copiedOk.style.display = "block";
+    setTimeout(()=> copiedOk.style.display="none", 1200);
+  }
 
-      p1Name:"Pilates Essentiel",
-      p1Price:"39€",
-      p1Per:"Accès 8 semaines",
-      p1WhoTitle:"Pour qui ?",
-      p1Who:[
-        "Pour commencer en sécurité",
-        "Pour s’entraîner en autonomie",
-        "Pour posture, mobilité et gainage"
-      ],
-      p1i1:"Programme 8 semaines (3 séances/semaine)",
-      p1i2:"Vidéos guidées + calendrier",
-      p1i3:"PDF échauffement + étirements",
-      p1i4:"Accès simple sur mobile",
-      p1Btn:"WhatsApp",
-      p1Pay:"Payer 39€",
-      p1Small:"Idéal si tu veux commencer en autonomie.",
-
-      p2Name:"Pilates Essentiel Plus",
-      best:"Le + choisi",
-      p2Price:"79€",
-      p2Per:"Accès 8 semaines + accompagnement",
-      p2WhoTitle:"Pour qui ?",
-      p2Who:[
-        "Pour progresser plus vite",
-        "Pour la motivation et le suivi",
-        "Pour un plan adapté à ton corps"
-      ],
-      p2i1:"Tout le pack Essentiel",
-      p2i2:"Plan adapté (objectif + niveau)",
-      p2i3:"Check-in hebdo (message)",
-      p2i4:"Support prioritaire (24h)",
-      p2Btn:"WhatsApp",
-      p2Pay:"Payer 79€",
-      p2Small:"Pour un suivi et un plan ajusté à ton corps.",
-
-      payNote:"Paiement : liens Stripe (remplace par tes liens).",
-
-      testiTitle:"Avis",
-      testiSub:"Exemples de phrases (à remplacer par des retours réels).",
-      t1:"“En 2 semaines, j’ai senti une meilleure posture et moins de tension lombaire. Facile à suivre.”",
-      t1w:"— Exemple : cliente (Pilates Essentiel)",
-      t2:"“Le Plus vaut le coup : le check-in m’a motivée et le plan était vraiment adapté à mon niveau.”",
-      t2w:"— Exemple : cliente (Essentiel Plus)",
-      t3:"“Séances courtes mais efficaces. Je peux tenir la routine et je sens le core plus fort.”",
-      t3w:"— Exemple : cliente",
-      testiNote:"⚠️ Important : remplace par des avis réels pour garder la confiance.",
-
-      faqTitle:"Questions fréquentes",
-      q1:"Ai-je besoin de matériel ?",
-      a1:"Non. Un tapis suffit. Une bande élastique est optionnelle.",
-      q2:"C’est pour débutants ?",
-      a2:"Oui. Le programme est progressif avec des adaptations.",
-      q3:"Comment je reçois le programme ?",
-      a3:"Tu reçois un lien d’accès aux contenus + calendrier (mobile/ordinateur).",
-      q4:"Je peux te parler avant d’acheter ?",
-      a4:"Bien sûr. Envoie-moi un message et je t’aide à choisir le bon pack.",
-
-      contactTitle:"Prêt(e) à commencer ?",
-      contactSub:"Clique sur WhatsApp et envoie-moi un message. Je te réponds et on choisit le pack idéal.",
-      smallNote:"*Tu peux modifier les textes, prix et liens quand tu veux.",
-
-      footerRights:"Tous droits réservés."
+  document.getElementById("copyNumber").addEventListener("click", async ()=>{
+    try{
+      await navigator.clipboard.writeText(MBWAY_NUMBER);
+      flashCopied();
+    }catch(e){
+      alert("Não foi possível copiar automaticamente. Copia manualmente: " + MBWAY_NUMBER);
     }
-  };
+  });
 
-  const $ = (id)=>document.getElementById(id);
-
-  function setUL(id, items){
-    const ul = $(id);
-    ul.innerHTML = "";
-    for(const it of items){
-      const li = document.createElement("li");
-      li.textContent = it;
-      ul.appendChild(li);
+  document.getElementById("copyMsg").addEventListener("click", async ()=>{
+    try{
+      await navigator.clipboard.writeText(currentMsg);
+      flashCopied();
+    }catch(e){
+      alert("Não foi possível copiar automaticamente. Mensagem: " + currentMsg);
     }
-  }
-
-  function applyLang(lang){
-    const d = T[lang];
-
-    $("brand").textContent = d.brand;
-    $("navPacks").textContent = d.navPacks;
-    $("navTestimonials").textContent = d.navTestimonials;
-    $("navContact").textContent = d.navContact;
-
-    $("kicker").textContent = d.kicker;
-    $("h1").textContent = d.h1;
-    $("sub").textContent = d.sub;
-
-    $("cta1").textContent = d.cta1;
-    $("cta2").textContent = d.cta2;
-
-    $("pill1").textContent = d.pill1;
-    $("pill2").textContent = d.pill2;
-    $("pill3").textContent = d.pill3;
-    $("pill4").textContent = d.pill4;
-
-    $("quickTitle").textContent = d.quickTitle;
-    setUL("quickList", d.quickList);
-    $("quickNote").textContent = d.quickNote;
-
-    $("packsTitle").textContent = d.packsTitle;
-    $("packsSub").textContent = d.packsSub;
-
-    $("p1Name").textContent = d.p1Name;
-    $("p1Price").textContent = d.p1Price;
-    $("p1Per").textContent = d.p1Per;
-    $("p1WhoTitle").textContent = d.p1WhoTitle;
-    setUL("p1Who", d.p1Who);
-    $("p1i1").textContent = d.p1i1;
-    $("p1i2").textContent = d.p1i2;
-    $("p1i3").textContent = d.p1i3;
-    $("p1i4").textContent = d.p1i4;
-    $("p1Btn").textContent = d.p1Btn;
-    $("p1Pay").textContent = d.p1Pay;
-    $("p1Small").textContent = d.p1Small;
-
-    $("p2Name").childNodes[0].textContent = d.p2Name + " ";
-    $("best").textContent = d.best;
-    $("p2Price").textContent = d.p2Price;
-    $("p2Per").textContent = d.p2Per;
-    $("p2WhoTitle").textContent = d.p2WhoTitle;
-    setUL("p2Who", d.p2Who);
-    $("p2i1").textContent = d.p2i1;
-    $("p2i2").textContent = d.p2i2;
-    $("p2i3").textContent = d.p2i3;
-    $("p2i4").textContent = d.p2i4;
-    $("p2Btn").textContent = d.p2Btn;
-    $("p2Pay").textContent = d.p2Pay;
-    $("p2Small").textContent = d.p2Small;
-
-    $("payNote").textContent = d.payNote;
-
-    $("testiTitle").textContent = d.testiTitle;
-    $("testiSub").textContent = d.testiSub;
-    $("t1").textContent = d.t1; $("t1w").textContent = d.t1w;
-    $("t2").textContent = d.t2; $("t2w").textContent = d.t2w;
-    $("t3").textContent = d.t3; $("t3w").textContent = d.t3w;
-    $("testiNote").textContent = d.testiNote;
-
-    $("faqTitle").textContent = d.faqTitle;
-    $("q1").textContent = d.q1; $("a1").textContent = d.a1;
-    $("q2").textContent = d.q2; $("a2").textContent = d.a2;
-    $("q3").textContent = d.q3; $("a3").textContent = d.a3;
-    $("q4").textContent = d.q4; $("a4").textContent = d.a4;
-
-    $("contactTitle").textContent = d.contactTitle;
-    $("contactSub").textContent = d.contactSub;
-    $("smallNote").textContent = d.smallNote;
-
-    const year = new Date().getFullYear();
-    $("footer").textContent = `© ${year} ${d.brand} — ${d.footerRights}`;
-
-    // WhatsApp links
-    $("whatsBtn").href = waLink(lang === "fr"
-      ? "Bonjour ! J’aimerais en savoir plus sur les packs Pilates Essentiel."
-      : "Olá! Quero saber mais sobre os packs Pilates Essencial."
-    );
-    $("p1Btn").href = waLink(lang === "fr"
-      ? "Bonjour ! Je veux le pack Pilates Essentiel (39€)."
-      : "Olá! Quero o pack Pilates Essencial (39€)."
-    );
-    $("p2Btn").href = waLink(lang === "fr"
-      ? "Bonjour ! Je veux le pack Pilates Essentiel Plus (79€)."
-      : "Olá! Quero o pack Pilates Essencial Plus (79€)."
-    );
-
-    // Payment links (Stripe)
-    $("p1Pay").href = STRIPE_ESSENCIAL;
-    $("p2Pay").href = STRIPE_PLUS;
-  }
-
-  $("lang").addEventListener("change", ()=>applyLang($("lang").value));
-  applyLang("pt");
+  });
 </script>
 
 </body>
