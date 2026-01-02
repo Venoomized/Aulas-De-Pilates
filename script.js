@@ -2,7 +2,7 @@
 const WHATSAPP_CONTACT = "351911918049";
 const INSTAGRAM_URL = "https://www.instagram.com/lrstudio_pt?ighs=dWx2Yng0MWw4bWU4";
 
-// Remplace par vos Payment Links Stripe (avec MB WAY activé si possible)
+// Remplace par tes liens Stripe quand tu les as
 const STRIPE_ESSENCIAL = "https://buy.stripe.com/REPLACE_39";
 const STRIPE_PLUS      = "https://buy.stripe.com/REPLACE_79";
 
@@ -38,7 +38,65 @@ function waLink(message){
   document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") closeMenu(); });
 })();
 
-// ===== LIENS AUTOMATIQUES (si les éléments existent) =====
+// ===== HEADER SCROLL EFFECT + TOP BUTTON =====
+(function(){
+  const header = document.querySelector("header");
+  const toTop = document.getElementById("toTop");
+
+  function onScroll(){
+    const y = window.scrollY || 0;
+    if(header){
+      header.classList.toggle("scrolled", y > 8);
+    }
+    if(toTop){
+      toTop.style.display = y > 450 ? "block" : "none";
+    }
+  }
+
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  if(toTop){
+    toTop.addEventListener("click", ()=> window.scrollTo({top:0, behavior:"smooth"}));
+  }
+})();
+
+// ===== SCROLL REVEAL =====
+(function(){
+  const items = document.querySelectorAll(".reveal");
+  if(!items.length) return;
+
+  const io = new IntersectionObserver((entries)=>{
+    for(const e of entries){
+      if(e.isIntersecting){
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      }
+    }
+  }, {threshold:0.14});
+
+  items.forEach(el=>io.observe(el));
+})();
+
+// ===== ACTIVE MENU LINK (met un style sur la page actuelle) =====
+(function(){
+  const path = location.pathname;
+  const isHome = /\/Aulas-De-Pilates\/?$/.test(path);
+
+  const map = {
+    home: isHome,
+    packs: /\/packs\/?$/.test(path),
+    testemunhos: /\/testemunhos\/?$/.test(path),
+    contacto: /\/contacto\/?$/.test(path),
+  };
+
+  document.querySelectorAll("[data-nav]").forEach(a=>{
+    const key = a.getAttribute("data-nav");
+    if(map[key]) a.classList.add("active");
+  });
+})();
+
+// ===== LIENS AUTOMATIQUES =====
 (function(){
   // WhatsApp
   const waEss = document.getElementById("waEssencial");
