@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LR Studio — Sobre</title>
+  <title>LR Studio — Início</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,22 +11,24 @@
 <header>
   <div class="wrap">
     <div class="nav">
-      <div class="brand">
+      <a class="brand" href="./">
         <img src="coach-lrstudio.jpeg" alt="LR Studio">
         <span>LR Studio</span>
-      </div>
+      </a>
 
       <div class="navRight desktopMenu">
-        <a class="btnGhost" href="packs/">Packs</a>
-        <a class="btnGhost" href="testemunhos/">Testemunhos</a>
-        <a class="btn" href="contacto/">Contacto</a>
+        <a class="linkPill" data-nav="home" href="./">Início</a>
+        <a class="linkPill" data-nav="packs" href="packs/">Packs</a>
+        <a class="linkPill" data-nav="testemunhos" href="testemunhos/">Testemunhos</a>
+        <a class="btn" data-nav="contacto" href="contacto/">Contacto</a>
       </div>
 
       <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
       <div class="mobileMenu" id="mobileMenu">
-        <a href="packs/">Packs</a>
-        <a href="testemunhos/">Testemunhos</a>
-        <a href="contacto/" class="cta">Contacto</a>
+        <a data-nav="home" href="./">Início</a>
+        <a data-nav="packs" href="packs/">Packs</a>
+        <a data-nav="testemunhos" href="testemunhos/">Testemunhos</a>
+        <a data-nav="contacto" href="contacto/" class="cta">Contacto</a>
       </div>
     </div>
   </div>
@@ -36,7 +38,7 @@
   <section class="hero">
     <div class="wrap">
       <div class="heroGrid">
-        <div>
+        <div class="reveal">
           <div class="kicker">Sobre a tua coach</div>
           <h1>Bem-vinda(o) ao LR Studio</h1>
           <p class="muted" style="font-size:16px;line-height:1.55;margin:0 0 16px 0;max-width:820px">
@@ -55,83 +57,100 @@
             <span class="pill">Postura</span>
             <span class="pill">Core</span>
           </div>
-
-          <div class="section">
-            <div class="grid2">
-              <div class="card">
-                <p class="miniTitle">O meu método</p>
-                <ul class="list">
-                  <li>Progressivo e adaptável (iniciantes)</li>
-                  <li>Treinos curtos e eficazes</li>
-                  <li>Foco em postura, mobilidade e core</li>
-                </ul>
-              </div>
-
-              <div class="card white">
-                <p class="miniTitle">Contacto rápido</p>
-                <p class="muted" style="margin:0;line-height:1.55">
-                  Se tens dúvidas sobre qual pack escolher, envia mensagem.
-                </p>
-                <div class="btnRow">
-                  <a class="btn" id="waGeral" target="_blank" rel="noopener">WhatsApp</a>
-                  <a class="btnGhost" id="insta" target="_blank" rel="noopener">Instagram</a>
-                </div>
-                <p class="small muted" style="margin:10px 0 0 0">
-                  Resposta rápida (normalmente no próprio dia).
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div class="card glow">
-          <p class="miniTitle">O que vais sentir</p>
+        <div class="card glow reveal">
+          <p class="miniTitle">O que vais conseguir</p>
           <ul class="list">
             <li>Mais estabilidade do core e menos tensão nas costas</li>
             <li>Melhor postura e mobilidade</li>
-            <li>Mais energia e leveza no dia a dia</li>
+            <li>Rotina sustentável e progressiva</li>
           </ul>
-          <div style="height:10px"></div>
-          <p class="small muted" style="margin:0">
-            Queres começar já? Vê os packs e escolhe o teu nível.
-          </p>
           <div class="btnRow">
-            <a class="btn" href="packs/">Ver packs</a>
+            <a class="btn" href="packs/">Começar agora</a>
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="card">
-        <h2 class="h2">Perguntas rápidas</h2>
-        <div class="faq">
-          <details>
-            <summary>É para iniciantes?</summary>
-            <div class="muted" style="margin-top:8px;line-height:1.55">
-              Sim. O plano é progressivo e inclui instruções para adaptar exercícios.
+      <!-- Antes / Depois -->
+      <section class="section">
+        <div class="card white reveal">
+          <h2 class="h2">Antes e Depois</h2>
+          <p class="muted" style="margin:0;line-height:1.55">
+            Exemplos do que muitas alunas sentem com consistência (resultados variam de pessoa para pessoa).
+          </p>
+
+          <div class="baGrid">
+            <div class="baCard">
+              <span class="baTag">ANTES</span>
+              <div class="baTitle">Dores e rigidez</div>
+              <p class="baText">Tensão nas costas, postura “fechada”, pouca mobilidade e sensação de cansaço.</p>
             </div>
-          </details>
-          <details>
-            <summary>Preciso de material?</summary>
-            <div class="muted" style="margin-top:8px;line-height:1.55">
-              Um tapete chega. Banda elástica é opcional.
+            <div class="baCard">
+              <span class="baTag">DEPOIS</span>
+              <div class="baTitle">Mais leveza e força</div>
+              <p class="baText">Mais estabilidade no core, postura melhor, corpo mais solto e movimentos mais fáceis.</p>
             </div>
-          </details>
-          <details>
-            <summary>Como funciona o pagamento?</summary>
-            <div class="muted" style="margin-top:8px;line-height:1.55">
-              Pelo Stripe (Cartão e, se estiver ativo, MB WAY no checkout).
-            </div>
-          </details>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section">
+        <div class="card reveal">
+          <h2 class="h2">Perguntas rápidas</h2>
+          <div class="faq">
+            <details>
+              <summary>É para iniciantes?</summary>
+              <div class="muted" style="margin-top:8px;line-height:1.55">
+                Sim. O plano é progressivo e inclui instruções para adaptar exercícios.
+              </div>
+            </details>
+            <details>
+              <summary>Preciso de material?</summary>
+              <div class="muted" style="margin-top:8px;line-height:1.55">
+                Um tapete chega. Banda elástica é opcional.
+              </div>
+            </details>
+            <details>
+              <summary>Como funciona o pagamento?</summary>
+              <div class="muted" style="margin-top:8px;line-height:1.55">
+                Pelo Stripe (Cartão e, se estiver ativo, MB WAY no checkout).
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="grid2">
+          <div class="card reveal">
+            <p class="miniTitle">O meu método</p>
+            <ul class="list">
+              <li>Progressivo e adaptável (iniciantes)</li>
+              <li>Treinos curtos e eficazes</li>
+              <li>Foco em postura, mobilidade e core</li>
+            </ul>
+          </div>
+
+          <div class="card white reveal">
+            <p class="miniTitle">Contacto rápido</p>
+            <p class="muted" style="margin:0;line-height:1.55">
+              Se tens dúvidas sobre qual pack escolher, envia mensagem.
+            </p>
+            <div class="btnRow">
+              <a class="btn" id="waGeral" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btnGhost" id="insta" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   </section>
 </main>
+
+<button id="toTop" aria-label="Voltar ao topo">Topo ↑</button>
 
 <footer>
   <div class="wrap" id="footer"></div>
