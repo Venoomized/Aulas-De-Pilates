@@ -1,42 +1,77 @@
 <!doctype html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Testemunhos — LR Studio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LR Studio — Testemunhos</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
 <header>
-  <div class="wrap nav">
-    <div class="brand">
-      <img src="../coach-lrstudio.jpeg">
-      LR Studio
-    </div>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">
+        <img src="../coach-lrstudio.jpeg" alt="LR Studio">
+        <span>LR Studio</span>
+      </div>
 
-    <nav class="menu">
-      <a href="../packs">Packs</a>
-      <a href="../testemunhos">Testemunhos</a>
-      <a href="../contacto" class="cta">Contacto</a>
-    </nav>
+      <div class="navRight desktopMenu">
+        <a class="btnGhost" href="../packs/">Packs</a>
+        <a class="btnGhost" href="../testemunhos/">Testemunhos</a>
+        <a class="btn" href="../contacto/">Contacto</a>
+      </div>
 
-    <button class="burger" id="burger">☰</button>
-    <div class="mobile" id="mobile">
-      <a href="../packs">Packs</a>
-      <a href="../testemunhos">Testemunhos</a>
-      <a href="../contacto" class="cta">Contacto</a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <div class="mobileMenu" id="mobileMenu">
+        <a href="../packs/">Packs</a>
+        <a href="../testemunhos/">Testemunhos</a>
+        <a href="../contacto/" class="cta">Contacto</a>
+      </div>
     </div>
   </div>
 </header>
 
-<main class="hero">
-  <div class="wrap">
-    <div class="card">
-      ⭐⭐⭐⭐⭐  
-      <p>“Senti melhorias na postura logo nas primeiras semanas.”</p>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="kicker">Resultados reais</div>
+      <h1>Testemunhos</h1>
+      <p class="muted" style="max-width:820px;line-height:1.55">
+        Alguns feedbacks de alunas. (Podes substituir por testemunhos reais quando tiverem.)
+      </p>
+
+      <div class="testiGrid">
+        <div class="quote">
+          <div class="stars">★★★★★</div>
+          <div class="txt">“Em 2 semanas já senti a postura mais direita e menos tensão lombar. Fácil de seguir.”</div>
+          <div class="who">— Aluna</div>
+        </div>
+        <div class="quote">
+          <div class="stars">★★★★★</div>
+          <div class="txt">“Sessões curtas mas eficazes. Consigo encaixar na rotina e sinto o core mais forte.”</div>
+          <div class="who">— Aluna</div>
+        </div>
+        <div class="quote">
+          <div class="stars">★★★★★</div>
+          <div class="txt">“O acompanhamento ajudou-me a manter a consistência. Mobilidade e postura melhoraram.”</div>
+          <div class="who">— Aluna</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="card">
+          <h2 class="h2">Queres começar?</h2>
+          <p class="muted">Vê os packs e escolhe o que faz mais sentido para ti.</p>
+          <div class="btnRow">
+            <a class="btn" href="../packs/">Ver packs</a>
+            <a class="btnGhost" href="../contacto/">Tirar dúvidas</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
+  </section>
 </main>
 
 <footer>
@@ -46,4 +81,3 @@
 <script src="../script.js"></script>
 </body>
 </html>
-
