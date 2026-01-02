@@ -1,73 +1,48 @@
 <!doctype html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LR Studio — Contacto</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto — LR Studio</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
 <header>
-  <div class="wrap">
-    <div class="nav">
-      <div class="brand">
-        <img src="coach-lrstudio.jpeg" alt="LR Studio">
-        <span>LR Studio</span>
-      </div>
+  <div class="wrap nav">
+    <div class="brand">
+      <img src="../coach-lrstudio.jpeg">
+      LR Studio
+    </div>
 
-      <div class="navRight desktopMenu">
-        <a class="btnGhost" href="packs.html">Packs</a>
-        <a class="btnGhost" href="testemunhos.html">Testemunhos</a>
-        <a class="btn" href="contacto.html">Contacto</a>
-      </div>
+    <nav class="menu">
+      <a href="../packs">Packs</a>
+      <a href="../testemunhos">Testemunhos</a>
+      <a href="../contacto" class="cta">Contacto</a>
+    </nav>
 
-      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
-      <div class="mobileMenu" id="mobileMenu">
-        <a href="packs.html">Packs</a>
-        <a href="testemunhos.html">Testemunhos</a>
-        <a href="contacto.html" class="cta">Contacto</a>
-      </div>
+    <button class="burger" id="burger">☰</button>
+    <div class="mobile" id="mobile">
+      <a href="../packs">Packs</a>
+      <a href="../testemunhos">Testemunhos</a>
+      <a href="../contacto" class="cta">Contacto</a>
     </div>
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <div class="kicker">Fala comigo</div>
-      <h1>Contacto</h1>
-      <p class="muted" style="max-width:760px;line-height:1.6">
-        Tens dúvidas? Queres saber qual pack é melhor para ti? Envia mensagem e eu ajudo.
-      </p>
-
-      <div class="section">
-        <div class="grid2">
-          <div class="card">
-            <strong>WhatsApp</strong>
-            <p class="muted">Resposta rápida para dúvidas e recomendações.</p>
-            <a class="btn" id="waGeral" target="_blank" rel="noopener">Abrir WhatsApp</a>
-          </div>
-          <div class="card">
-            <strong>Instagram</strong>
-            <p class="muted">Conteúdos, aulas e novidades.</p>
-            <a class="btnGhost" id="insta" target="_blank" rel="noopener">Abrir Instagram</a>
-          </div>
-        </div>
-
-        <div style="height:14px"></div>
-
-        <div class="card">
-          <strong>Pronta(o) para começar?</strong>
-          <p class="muted">Vê os packs e escolhe o plano ideal.</p>
-          <a class="btn" href="packs.html">Ver packs</a>
-        </div>
-      </div>
+<main class="hero">
+  <div class="wrap">
+    <div class="card">
+      <h2>Contacto</h2>
+      <p class="muted">Fala comigo via WhatsApp ou Instagram.</p>
     </div>
-  </section>
+  </div>
 </main>
 
-<footer><div class="wrap" id="footer"></div></footer>
-<script src="script.js"></script>
+<footer>
+  <div class="wrap" id="footer"></div>
+</footer>
+
+<script src="../script.js"></script>
 </body>
 </html>
