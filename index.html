@@ -3,213 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LR Studio — Pilates Essencial</title>
-
-  <style>
-    :root{
-      --bg:#ffffff;
-      --text:#0f172a;
-      --muted:#64748b;
-      --card:#f8fafc;
-      --border:#e2e8f0;
-      --accent:#a01873;
-      --accent2:#7a1259;
-      --dark:#0f172a;
-      --good:#16a34a;
-      --badgeBg:#e9d5ff;
-      --badgeBd:#d8b4fe;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background:var(--bg);
-      color:var(--text);
-    }
-    a{color:inherit}
-    .wrap{max-width:1100px;margin:0 auto;padding:0 18px;}
-
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:saturate(180%) blur(8px);
-      border-bottom:1px solid var(--border);
-    }
-    .nav{
-      position:relative;
-      display:flex;align-items:center;justify-content:space-between;
-      gap:12px;padding:12px 0;
-    }
-    .brand{
-      display:flex;align-items:center;gap:10px;
-      font-weight:950;letter-spacing:.2px;font-size:18px;
-    }
-    .brand img{
-      width:42px;height:42px;border-radius:50%;
-      object-fit:cover;display:block;
-      border:1px solid var(--border);
-      background:#fff;
-    }
-
-    .navRight{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      background:var(--accent);color:#fff;text-decoration:none;
-      padding:10px 14px;border-radius:12px;font-weight:900;border:0;cursor:pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .btn:hover{background:var(--accent2)}
-    .btnGhost{
-      display:inline-flex;align-items:center;justify-content:center;
-      background:#fff;color:var(--accent);text-decoration:none;
-      padding:10px 14px;border-radius:12px;font-weight:900;border:1px solid var(--border);
-      -webkit-tap-highlight-color: transparent;
-    }
-    .btnPay{
-      display:inline-flex;align-items:center;justify-content:center;
-      background:var(--dark);color:#fff;text-decoration:none;
-      padding:10px 14px;border-radius:12px;font-weight:900;border:0;cursor:pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .btnPay:hover{filter:brightness(1.06)}
-
-    /* ===== HERO / SEÇÕES ===== */
-    .hero{padding:38px 0 22px 0;}
-    .heroGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start;}
-    @media (max-width:900px){.heroGrid{grid-template-columns:1fr}}
-    .kicker{color:var(--accent);font-weight:950;letter-spacing:.3px;text-transform:uppercase;font-size:12px}
-    h1{margin:10px 0 10px 0;font-size:38px;line-height:1.05}
-    .sub{color:var(--muted);font-size:16px;line-height:1.55;margin:0 0 16px 0;}
-    .pillRow{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0 0;}
-    .pill{border:1px solid var(--border);background:var(--card);padding:8px 10px;border-radius:999px;font-size:13px;color:#334155}
-
-    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;}
-    .miniTitle{font-weight:950;margin:0 0 8px 0;}
-    .list{margin:0;padding-left:18px;color:#334155}
-    .list li{margin:8px 0}
-
-    .section{padding:22px 0}
-    .h2{font-size:24px;margin:0 0 10px 0}
-    .muted{color:var(--muted)}
-    .small{font-size:13px}
-
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    @media (max-width:900px){.grid2{grid-template-columns:1fr}}
-
-    .price{font-size:34px;font-weight:950;margin:10px 0 4px 0;}
-    .per{color:var(--muted);font-size:13px}
-
-    .badge{
-      display:inline-block;margin-left:8px;
-      font-size:12px;font-weight:950;color:#0f172a;
-      background:var(--badgeBg);border:1px solid var(--badgeBd);padding:4px 8px;border-radius:999px;
-    }
-    .check{color:var(--good);font-weight:950;margin-right:8px}
-    .btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-
-    .whoBox{
-      margin-top:12px;background:#fff;border:1px solid var(--border);
-      border-radius:14px;padding:12px;
-    }
-    .whoTitle{font-weight:950;margin:0 0 8px 0;font-size:14px}
-    .whoList{margin:0;padding-left:18px;color:#334155;font-size:14px}
-    .whoList li{margin:7px 0}
-
-    .testiGrid{
-      display:grid;grid-template-columns:repeat(3, 1fr);
-      gap:14px;margin-top:12px;
-    }
-    @media (max-width:900px){.testiGrid{grid-template-columns:1fr}}
-    .quote{
-      background:#fff;border:1px solid var(--border);
-      border-radius:16px;padding:14px;
-    }
-    .quote .stars{font-weight:950;letter-spacing:1px}
-    .quote .txt{margin:8px 0;color:#334155;line-height:1.45}
-    .quote .who{margin-top:10px;color:var(--muted);font-size:13px}
-
-    .faq details{border:1px solid var(--border);border-radius:14px;padding:12px 12px;background:#fff}
-    .faq details+details{margin-top:10px}
-    .faq summary{font-weight:950;cursor:pointer}
-
-    footer{border-top:1px solid var(--border);padding:20px 0;color:var(--muted);font-size:13px}
-
-    /* ===== MENU HAMBURGER (MOBILE) ===== */
-    .desktopMenu{display:flex}
-    .burger{
-      display:none;
-      width:44px;height:44px;
-      border:1px solid var(--border);
-      background:#fff;
-      border-radius:12px;
-      font-size:22px;
-      line-height:1;
-      cursor:pointer;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .mobileMenu{
-      display:none;
-      position:absolute;
-      top:62px;
-      right:0;
-      width:min(240px, 92vw);
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:8px;
-      box-shadow:0 14px 40px rgba(0,0,0,.10);
-    }
-    .mobileMenu a{
-      display:block;
-      padding:12px 12px;
-      border-radius:12px;
-      font-weight:900;
-      text-decoration:none;
-      color:var(--text);
-    }
-    .mobileMenu a:hover{background:var(--card)}
-    .mobileMenu .cta{
-      margin-top:6px;
-      background:var(--accent);
-      color:#fff !important;
-      text-align:center;
-    }
-    .mobileMenu .cta:hover{background:var(--accent2)}
-
-    @media (max-width:768px){
-      .desktopMenu{display:none}
-      .burger{display:inline-flex;align-items:center;justify-content:center}
-    }
-  </style>
+  <title>LR Studio — Sobre</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <header>
   <div class="wrap">
     <div class="nav">
       <div class="brand">
-        <!-- ✅ Coloca a imagem na raiz do repo com este nome: coach-lrstudio.jpeg -->
         <img src="coach-lrstudio.jpeg" alt="LR Studio">
         <span>LR Studio</span>
       </div>
 
-      <!-- Menu desktop -->
       <div class="navRight desktopMenu">
-        <a class="btnGhost" href="#packs">Packs</a>
-        <a class="btnGhost" href="#testemunhos">Testemunhos</a>
-        <a class="btn" href="#contacto">Contacto</a>
+        <a class="btnGhost" href="packs.html">Packs</a>
+        <a class="btnGhost" href="testemunhos.html">Testemunhos</a>
+        <a class="btn" href="contacto.html">Contacto</a>
       </div>
 
-      <!-- Botão hamburger (mobile) -->
       <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
-
-      <!-- Menu mobile (abre ao clicar) -->
-      <div class="mobileMenu" id="mobileMenu" role="menu" aria-label="Menu">
-        <a href="#packs" role="menuitem">Packs</a>
-        <a href="#testemunhos" role="menuitem">Testemunhos</a>
-        <a href="#contacto" role="menuitem" class="cta">Contacto</a>
+      <div class="mobileMenu" id="mobileMenu">
+        <a href="packs.html">Packs</a>
+        <a href="testemunhos.html">Testemunhos</a>
+        <a href="contacto.html" class="cta">Contacto</a>
       </div>
     </div>
   </div>
@@ -218,257 +35,49 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="heroGrid">
-        <div>
-          <div class="kicker">Plano de Pilates</div>
-          <h1>Pilates Essencial — 8 semanas para te sentires mais forte e leve</h1>
-          <p class="sub">
-            Treinos simples em casa, guiados passo-a-passo. Ideal para melhorar postura, mobilidade e fortalecer o core.
-          </p>
-
-          <div class="btnRow">
-            <a class="btn" href="#packs">Ver packs</a>
-            <a class="btnGhost" href="#faq">Perguntas</a>
-          </div>
-
-          <div class="pillRow">
-            <span class="pill">Em casa</span>
-            <span class="pill">20–35 min</span>
-            <span class="pill">3x / semana</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <p class="miniTitle">O que vais conseguir</p>
-          <ul class="list">
-            <li>Mais estabilidade do core e menos tensão nas costas</li>
-            <li>Melhor postura e mobilidade</li>
-            <li>Rotina sustentável e progressiva</li>
-            <li>Mais energia no dia a dia</li>
-          </ul>
-          <div style="height:10px"></div>
-          <div class="small muted">Sem pressão: progressivo e adaptável ao teu ritmo.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="packs">
-    <div class="wrap">
-      <h2 class="h2">Escolhe o teu pack</h2>
-      <p class="muted">Dois níveis — autónomo ou com acompanhamento — para se adaptar ao teu objetivo.</p>
-
-      <div class="grid2" style="margin-top:14px">
-        <!-- Pack 1 -->
-        <div class="card">
-          <h3 style="margin:0;font-size:18px;font-weight:950">Pilates Essencial</h3>
-
-          <div class="price">39€</div>
-          <div class="per">Acesso 8 semanas</div>
-
-          <div class="whoBox">
-            <div class="whoTitle">Para quem é</div>
-            <ul class="whoList">
-              <li>Para quem quer começar Pilates com segurança</li>
-              <li>Para quem prefere treinar de forma autónoma</li>
-              <li>Para quem quer melhorar postura, mobilidade e core</li>
-            </ul>
-          </div>
-
-          <div style="margin-top:12px">
-            <div><span class="check">✓</span>Plano 8 semanas (3 treinos/semana)</div>
-            <div style="margin-top:8px"><span class="check">✓</span>Vídeos guiados + calendário</div>
-            <div style="margin-top:8px"><span class="check">✓</span>PDF aquecimento + alongamentos</div>
-            <div style="margin-top:8px"><span class="check">✓</span>Acesso simples no telemóvel</div>
-          </div>
-
-          <div class="btnRow">
-            <a class="btn" id="waEssencial" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btnPay" id="payEssencial" target="_blank" rel="noopener">Pagar (MB WAY / Cartão)</a>
-          </div>
-
-          <div class="small muted" style="margin-top:10px">Ideal se queres começar já, com autonomia.</div>
-        </div>
-
-        <!-- Pack 2 -->
-        <div class="card" style="border:2px solid var(--badgeBd)">
-          <h3 style="margin:0;font-size:18px;font-weight:950">
-            Pilates Essencial Plus <span class="badge">Mais escolhido</span>
-          </h3>
-
-          <div class="price">79€</div>
-          <div class="per">Acesso 8 semanas + acompanhamento</div>
-
-          <div class="whoBox">
-            <div class="whoTitle">Para quem é</div>
-            <ul class="whoList">
-              <li>Para quem quer resultados mais rápidos</li>
-              <li>Para quem precisa de motivação e acompanhamento</li>
-              <li>Para quem quer um plano adaptado ao seu corpo</li>
-            </ul>
-          </div>
-
-          <div style="margin-top:12px">
-            <div><span class="check">✓</span>Tudo do Essencial</div>
-            <div style="margin-top:8px"><span class="check">✓</span>Plano adaptado (objetivo + nível)</div>
-            <div style="margin-top:8px"><span class="check">✓</span>Check-in semanal (mensagem)</div>
-            <div style="margin-top:8px"><span class="check">✓</span>Suporte prioritário (24h)</div>
-          </div>
-
-          <div class="btnRow">
-            <a class="btn" id="waPlus" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btnPay" id="payPlus" target="_blank" rel="noopener">Pagar (MB WAY / Cartão)</a>
-          </div>
-
-          <div class="small muted" style="margin-top:10px">Para quem quer mais motivação e um plano ajustado ao seu corpo.</div>
-        </div>
-      </div>
-
-      <p class="muted small" style="margin-top:10px">
-        No checkout, o cliente pode escolher MB WAY ou Cartão (depende dos métodos ativos no Stripe).
+      <div class="kicker">Sobre a tua coach</div>
+      <h1>Bem-vinda(o) ao LR Studio</h1>
+      <p class="muted" style="max-width:760px;line-height:1.6">
+        Aqui o foco é criar uma rotina sustentável, com treinos que encaixam na tua vida.
+        O Pilates ajuda-te a melhorar postura, mobilidade, força e bem-estar — sem pressão e ao teu ritmo.
       </p>
-    </div>
-  </section>
 
-  <section class="section" id="testemunhos">
-    <div class="wrap">
-      <h2 class="h2">Testemunhos</h2>
-      <div class="testiGrid">
-        <div class="quote">
-          <div class="stars">★★★★★</div>
-          <div class="txt">“Em 2 semanas já senti a postura mais direita e menos tensão lombar. As aulas são fáceis de seguir.”</div>
-          <div class="who">— Aluna</div>
-        </div>
-        <div class="quote">
-          <div class="stars">★★★★★</div>
-          <div class="txt">“Sessões curtas mas eficazes. Consigo encaixar na rotina e sinto o core mais forte.”</div>
-          <div class="who">— Aluna</div>
-        </div>
-        <div class="quote">
-          <div class="stars">★★★★★</div>
-          <div class="txt">“O acompanhamento ajudou-me a manter a consistência. Senti melhorias na mobilidade e postura.”</div>
-          <div class="who">— Aluna</div>
+      <div class="pillRow">
+        <span class="pill">Pilates</span>
+        <span class="pill">Mobilidade</span>
+        <span class="pill">Postura</span>
+        <span class="pill">Core</span>
+      </div>
+
+      <div class="section">
+        <div class="grid2">
+          <div class="card">
+            <strong>O meu método</strong>
+            <p class="muted" style="line-height:1.6">
+              Progressivo, simples e adaptável. O objetivo é consistência e resultados reais,
+              com treinos curtos e eficazes.
+            </p>
+            <a class="btn" href="packs.html">Ver packs</a>
+          </div>
+
+          <div class="card">
+            <strong>Queres falar comigo?</strong>
+            <p class="muted" style="line-height:1.6">
+              Se tens dúvidas sobre qual pack escolher, manda mensagem.
+            </p>
+            <div class="btnRow">
+              <a class="btn" id="waGeral" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btnGhost" id="insta" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="faq">
-    <div class="wrap">
-      <h2 class="h2">Perguntas frequentes</h2>
-      <div class="faq" style="margin-top:12px">
-        <details>
-          <summary>Preciso de material?</summary>
-          <div class="muted" style="margin-top:8px">Não. Um tapete já chega. Se tiveres, uma banda elástica é opcional.</div>
-        </details>
-        <details>
-          <summary>É para iniciantes?</summary>
-          <div class="muted" style="margin-top:8px">Sim. O plano é progressivo e inclui instruções para adaptar os exercícios.</div>
-        </details>
-        <details>
-          <summary>Como recebo o plano?</summary>
-          <div class="muted" style="margin-top:8px">Recebes um link com acesso aos conteúdos e calendário (no telemóvel ou computador).</div>
-        </details>
-        <details>
-          <summary>Posso falar contigo antes de comprar?</summary>
-          <div class="muted" style="margin-top:8px">Claro. Envia mensagem e eu ajudo-te a escolher o pack ideal.</div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="contacto">
-    <div class="wrap">
-      <div class="card">
-        <h2 class="h2">Contacto</h2>
-        <p class="muted">Envia mensagem no WhatsApp ou Instagram. Eu respondo e ajudo-te a escolher o pack ideal.</p>
-        <div class="btnRow">
-          <a class="btn" id="waGeral" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btnGhost" id="insta" target="_blank" rel="noopener">Instagram</a>
-        </div>
-        <p class="muted small" style="margin-top:12px">
-          *Se o MB WAY não aparecer no checkout, é porque ainda não está ativo nesse link Stripe.
-        </p>
-      </div>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap" id="footer"></div>
-</footer>
-
-<script>
-  // ====== CONFIGURAÇÃO ======
-  // WhatsApp do contacto (sem + e sem espaços)
-  const WHATSAPP_CONTACT = "351911918049";
-
-  // Instagram
-  const INSTAGRAM_URL = "https://www.instagram.com/lrstudio_pt?ighs=dWx2Yng0MWw4bWU4";
-
-  // ✅ Colar aqui os Payment Links do Stripe (cada um com MB WAY ativado)
-  const STRIPE_ESSENCIAL = "https://buy.stripe.com/REPLACE_39";
-  const STRIPE_PLUS      = "https://buy.stripe.com/REPLACE_79";
-
-  function waLink(message){
-    return "https://wa.me/" + WHATSAPP_CONTACT + "?text=" + encodeURIComponent(message);
-  }
-
-  // WhatsApp
-  document.getElementById("waEssencial").href = waLink("Olá! Quero o pack Pilates Essencial (39€).");
-  document.getElementById("waPlus").href      = waLink("Olá! Quero o pack Pilates Essencial Plus (79€).");
-  document.getElementById("waGeral").href     = waLink("Olá! Quero saber mais sobre os packs Pilates.");
-
-  // Instagram
-  document.getElementById("insta").href = INSTAGRAM_URL;
-
-  // Stripe links
-  document.getElementById("payEssencial").href = STRIPE_ESSENCIAL;
-  document.getElementById("payPlus").href      = STRIPE_PLUS;
-
-  // Footer year
-  document.getElementById("footer").textContent =
-    `© ${new Date().getFullYear()} LR Studio — Todos os direitos reservados.`;
-
-  // ====== MENU MOBILE (HAMBURGER) ======
-  const burger = document.getElementById("burger");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  function closeMenu(){
-    mobileMenu.style.display = "none";
-    burger.setAttribute("aria-expanded","false");
-  }
-  function toggleMenu(){
-    const open = mobileMenu.style.display === "block";
-    if(open) closeMenu();
-    else{
-      mobileMenu.style.display = "block";
-      burger.setAttribute("aria-expanded","true");
-    }
-  }
-
-  burger.addEventListener("click", (e) => {
-    e.stopPropagation();
-    toggleMenu();
-  });
-
-  // Fecha ao clicar fora
-  document.addEventListener("click", (e) => {
-    if (mobileMenu.style.display === "block") closeMenu();
-  });
-
-  // Não fechar ao clicar dentro do menu (mas fecha ao clicar num link)
-  mobileMenu.addEventListener("click", (e) => {
-    const target = e.target;
-    if (target && target.tagName === "A") closeMenu();
-    e.stopPropagation();
-  });
-
-  // Fecha com ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-</script>
-
+<footer><div class="wrap" id="footer"></div></footer>
+<script src="script.js"></script>
 </body>
 </html>
