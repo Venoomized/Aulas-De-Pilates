@@ -76,7 +76,7 @@
     .badge{
       display:inline-block;margin-left:8px;
       font-size:12px;font-weight:950;color:#0f172a;
-      background:var(--badgeBg);border:1px solid var(--badgeBd);padding:4px 8px;border-radius:999px;
+      background:#e9d5ff;border:1px solid #d8b4fe;padding:4px 8px;border-radius:999px;
     }
     .check{color:var(--good);font-weight:950;margin-right:8px}
 
@@ -113,17 +113,6 @@
     .faq summary{font-weight:950;cursor:pointer}
 
     footer{border-top:1px solid var(--border);padding:20px 0;color:var(--muted);font-size:13px}
-
-    dialog{border:1px solid var(--border);border-radius:16px;max-width:640px;width:92vw;}
-    dialog::backdrop{background:rgba(0,0,0,.35)}
-    .dlgTop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
-    .x{border:1px solid var(--border);background:#fff;border-radius:12px;padding:8px 10px;cursor:pointer;font-weight:900}
-    .mbBox{background:#fff;border:1px solid var(--border);border-radius:16px;padding:14px}
-    .mbRow{display:flex;justify-content:space-between;gap:10px;padding:6px 0}
-    .mbRow .k{color:var(--muted)}
-    .copyBtn{border:1px solid var(--border);background:#fff;border-radius:12px;padding:10px 12px;font-weight:900;cursor:pointer}
-    .copyBtn:hover{filter:brightness(0.98)}
-    .ok{color:var(--good);font-weight:900;margin-top:8px;display:none}
   </style>
 </head>
 <body>
@@ -209,7 +198,7 @@
 
           <div class="btnRow">
             <a class="btn" id="waEssencial" target="_blank" rel="noopener">WhatsApp</a>
-            <button class="btnPay" id="mbEssencial">Pagar por MB WAY</button>
+            <a class="btnPay" id="payEssencial" target="_blank" rel="noopener">Pagar (MB WAY / Cartão)</a>
           </div>
 
           <div class="small muted" style="margin-top:10px">Ideal se queres começar já, com autonomia.</div>
@@ -242,7 +231,7 @@
 
           <div class="btnRow">
             <a class="btn" id="waPlus" target="_blank" rel="noopener">WhatsApp</a>
-            <button class="btnPay" id="mbPlus">Pagar por MB WAY</button>
+            <a class="btnPay" id="payPlus" target="_blank" rel="noopener">Pagar (MB WAY / Cartão)</a>
           </div>
 
           <div class="small muted" style="margin-top:10px">Para quem quer mais motivação e um plano ajustado ao seu corpo.</div>
@@ -250,7 +239,7 @@
       </div>
 
       <p class="muted small" style="margin-top:10px">
-        Ao pagar por MB WAY: faz o pagamento e envia comprovativo no WhatsApp/Instagram.
+        No checkout, o cliente pode escolher MB WAY ou Cartão (depende dos métodos ativos no Stripe).
       </p>
     </div>
   </section>
@@ -258,21 +247,22 @@
   <section class="section" id="testemunhos">
     <div class="wrap">
       <h2 class="h2">Testemunhos</h2>
+      <p class="muted small">Frases de exemplo (substitui por feedback real quando tiveres).</p>
       <div class="testiGrid">
         <div class="quote">
           <div class="stars">★★★★★</div>
           <div class="txt">“Em 2 semanas já senti a postura mais direita e menos tensão lombar. As aulas são fáceis de seguir.”</div>
-          <div class="who">— Cliente</div>
+          <div class="who">— Aluna</div>
         </div>
         <div class="quote">
           <div class="stars">★★★★★</div>
           <div class="txt">“Sessões curtas mas eficazes. Consigo encaixar na rotina e sinto o core mais forte.”</div>
-          <div class="who">— Cliente</div>
+          <div class="who">— Aluna</div>
         </div>
         <div class="quote">
           <div class="stars">★★★★★</div>
           <div class="txt">“O acompanhamento ajudou-me a manter a consistência. Senti melhorias na mobilidade e postura.”</div>
-          <div class="who">— Cliente</div>
+          <div class="who">— Aluna</div>
         </div>
       </div>
     </div>
@@ -317,7 +307,7 @@
         </div>
 
         <p class="muted small" style="margin-top:12px">
-          *Se pagares por MB WAY, envia o comprovativo e o nome do pack.
+          *Se o MB WAY não aparecer no checkout, é porque ainda não está ativo nesse link Stripe.
         </p>
       </div>
     </div>
@@ -328,32 +318,6 @@
   <div class="wrap" id="footer"></div>
 </footer>
 
-<!-- MB WAY Modal -->
-<dialog id="mbDlg">
-  <div class="dlgTop">
-    <strong id="mbTitle">Pagamento por MB WAY</strong>
-    <button class="x" id="closeDlg">Fechar</button>
-  </div>
-
-  <div class="mbBox">
-    <div class="mbRow"><div class="k">Pack</div><div id="mbPack">—</div></div>
-    <div class="mbRow"><div class="k">Valor</div><div id="mbAmount">—</div></div>
-    <div class="mbRow"><div class="k">Número MB WAY</div><div id="mbNumber">—</div></div>
-    <div class="mbRow"><div class="k">Titular (opcional)</div><div id="mbName">—</div></div>
-
-    <div class="btnRow" style="margin-top:12px">
-      <button class="copyBtn" id="copyNumber">Copiar número</button>
-      <button class="copyBtn" id="copyMsg">Copiar mensagem</button>
-      <a class="btn" id="paidBtn" target="_blank" rel="noopener">Enviar “Já paguei”</a>
-    </div>
-    <div class="ok" id="copiedOk">Copiado ✅</div>
-
-    <p class="muted small" style="margin-top:12px">
-      Faz o pagamento no MB WAY e depois envia comprovativo no WhatsApp/Instagram.
-    </p>
-  </div>
-</dialog>
-
 <script>
   // WhatsApp do contacto (sem + e sem espaços)
   const WHATSAPP_CONTACT = "351911918049";
@@ -361,11 +325,9 @@
   // Instagram
   const INSTAGRAM_URL = "https://www.instagram.com/lrstudio_pt?ighs=dWx2Yng0MWw4bWU4";
 
-  // 🔴 Preenche aqui com o MB WAY do dono do negócio (sem espaços). Ex: "3519XXXXXXXX"
-  const MBWAY_NUMBER = "3519XXXXXXXX";
-
-  // (Opcional) nome do titular para aparecer
-  const MBWAY_HOLDER = "LR Studio";
+  // ✅ Colar aqui os Payment Links do Stripe (cada um com MB WAY ativado)
+  const STRIPE_ESSENCIAL = "https://buy.stripe.com/REPLACE_39";
+  const STRIPE_PLUS      = "https://buy.stripe.com/REPLACE_79";
 
   function waLink(message){
     return "https://wa.me/" + WHATSAPP_CONTACT + "?text=" + encodeURIComponent(message);
@@ -376,64 +338,16 @@
   document.getElementById("waPlus").href      = waLink("Olá! Quero o pack Pilates Essencial Plus (79€).");
   document.getElementById("waGeral").href     = waLink("Olá! Quero saber mais sobre os packs Pilates Essencial.");
 
-  // Instagram
+  // Instagram link
   document.getElementById("insta").href = INSTAGRAM_URL;
+
+  // Stripe payment links
+  document.getElementById("payEssencial").href = STRIPE_ESSENCIAL;
+  document.getElementById("payPlus").href      = STRIPE_PLUS;
 
   // Footer
   const year = new Date().getFullYear();
   document.getElementById("footer").textContent = `© ${year} LR Studio — Todos os direitos reservados.`;
-
-  // MB WAY modal logic
-  const dlg = document.getElementById("mbDlg");
-  const mbPack = document.getElementById("mbPack");
-  const mbAmount = document.getElementById("mbAmount");
-  const mbNumber = document.getElementById("mbNumber");
-  const mbName = document.getElementById("mbName");
-  const copiedOk = document.getElementById("copiedOk");
-  const paidBtn = document.getElementById("paidBtn");
-
-  let currentMsg = "";
-
-  function openMB(pack, amount){
-    mbPack.textContent = pack;
-    mbAmount.textContent = amount;
-    mbNumber.textContent = MBWAY_NUMBER;
-    mbName.textContent = MBWAY_HOLDER || "—";
-
-    currentMsg = `Pagamento MB WAY - ${pack} - ${amount}. Nome: ____`;
-    paidBtn.href = waLink("Olá! Já paguei por MB WAY. " + currentMsg + " (Vou enviar o comprovativo.)");
-
-    copiedOk.style.display = "none";
-    dlg.showModal();
-  }
-
-  document.getElementById("mbEssencial").addEventListener("click", ()=> openMB("Pilates Essencial", "39€"));
-  document.getElementById("mbPlus").addEventListener("click", ()=> openMB("Pilates Essencial Plus", "79€"));
-
-  document.getElementById("closeDlg").addEventListener("click", ()=> dlg.close());
-
-  function flashCopied(){
-    copiedOk.style.display = "block";
-    setTimeout(()=> copiedOk.style.display="none", 1200);
-  }
-
-  document.getElementById("copyNumber").addEventListener("click", async ()=>{
-    try{
-      await navigator.clipboard.writeText(MBWAY_NUMBER);
-      flashCopied();
-    }catch(e){
-      alert("Não foi possível copiar automaticamente. Copia manualmente: " + MBWAY_NUMBER);
-    }
-  });
-
-  document.getElementById("copyMsg").addEventListener("click", async ()=>{
-    try{
-      await navigator.clipboard.writeText(currentMsg);
-      flashCopied();
-    }catch(e){
-      alert("Não foi possível copiar automaticamente. Mensagem: " + currentMsg);
-    }
-  });
 </script>
 
 </body>
