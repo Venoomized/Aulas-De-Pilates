@@ -1,317 +1,211 @@
 <!doctype html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pilates Essencial — Planos</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LR Studio — Pilates Essencial</title>
+
   <style>
     :root{
       --bg:#ffffff;
       --text:#0f172a;
       --muted:#64748b;
-      --card:#f8fafc;
       --border:#e2e8f0;
+      --card:#f8fafc;
       --accent:#a01873;
       --accent2:#7a1259;
-      --good:#16a34a;
-      --badgeBg:#e9d5ff;
-      --badgeBd:#d8b4fe;
       --dark:#0f172a;
+      --good:#16a34a;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);}
-    a{color:inherit}
-    .wrap{max-width:1050px;margin:0 auto;padding:0 18px;}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+      background:var(--bg);
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
     header{
-      position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(8px);
-      border-bottom:1px solid var(--border);z-index:50;
+      position:sticky;top:0;z-index:50;
+      background:#fff;border-bottom:1px solid var(--border)
     }
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;}
-    .brand{font-weight:950;letter-spacing:.2px}
-    .navRight{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      background:var(--accent);color:#fff;text-decoration:none;
-      padding:10px 14px;border-radius:12px;font-weight:900;border:0;cursor:pointer;
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 0
     }
-    .btn:hover{background:var(--accent2)}
-    .btnGhost{
-      display:inline-flex;align-items:center;justify-content:center;
-      background:#fff;color:var(--accent);text-decoration:none;
-      padding:10px 14px;border-radius:12px;font-weight:900;border:1px solid var(--border);
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      font-weight:900;font-size:18px
     }
-    .btnPay{
-      display:inline-flex;align-items:center;justify-content:center;
-      background:var(--dark);color:#fff;text-decoration:none;
-      padding:10px 14px;border-radius:12px;font-weight:900;border:0;cursor:pointer;
+    .brand img{
+      width:42px;height:42px;border-radius:50%;
+      object-fit:cover
     }
-    .btnPay:hover{filter:brightness(1.06)}
-    .btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-
-    .hero{padding:38px 0 22px 0;}
-    .heroGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start;}
-    @media (max-width:900px){.heroGrid{grid-template-columns:1fr}}
-    .kicker{color:var(--accent);font-weight:950;letter-spacing:.3px;text-transform:uppercase;font-size:12px}
-    h1{margin:10px 0 10px 0;font-size:38px;line-height:1.05}
-    .sub{color:var(--muted);font-size:16px;line-height:1.55;margin:0 0 16px 0;}
-    .pillRow{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0 0;}
-    .pill{border:1px solid var(--border);background:var(--card);padding:8px 10px;border-radius:999px;font-size:13px;color:#334155}
-
-    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;}
-    .miniTitle{font-weight:950;margin:0 0 8px 0;}
-    .list{margin:0;padding-left:18px;color:#334155}
-    .list li{margin:8px 0}
-
-    .section{padding:22px 0}
-    .h2{font-size:24px;margin:0 0 10px 0}
+    .nav a.btn{
+      background:var(--accent);color:#fff;
+      padding:10px 14px;border-radius:12px;
+      font-weight:900
+    }
+    .hero{padding:40px 0}
+    .heroGrid{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:22px
+    }
+    @media(max-width:900px){.heroGrid{grid-template-columns:1fr}}
+    h1{font-size:38px;line-height:1.1;margin:10px 0}
     .muted{color:var(--muted)}
-    .small{font-size:13px}
-
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    @media (max-width:900px){.grid2{grid-template-columns:1fr}}
-
-    .price{font-size:34px;font-weight:950;margin:10px 0 4px 0;}
-    .per{color:var(--muted);font-size:13px}
-
-    .badge{
-      display:inline-block;margin-left:8px;
-      font-size:12px;font-weight:950;color:#0f172a;
-      background:#e9d5ff;border:1px solid #d8b4fe;padding:4px 8px;border-radius:999px;
-    }
-    .check{color:var(--good);font-weight:950;margin-right:8px}
-
-    .whoBox{
-      margin-top:12px;
-      background:#fff;
+    .pillRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .pill{
+      background:var(--card);
       border:1px solid var(--border);
-      border-radius:14px;
-      padding:12px;
+      padding:6px 10px;border-radius:999px;
+      font-size:13px
     }
-    .whoTitle{font-weight:950;margin:0 0 8px 0;font-size:14px}
-    .whoList{margin:0;padding-left:18px;color:#334155;font-size:14px}
-    .whoList li{margin:7px 0}
-
-    .testiGrid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:14px;
-      margin-top:12px;
-    }
-    @media (max-width:900px){.testiGrid{grid-template-columns:1fr}}
-    .quote{
-      background:#fff;
+    .card{
+      background:var(--card);
       border:1px solid var(--border);
       border-radius:16px;
-      padding:14px;
+      padding:16px
     }
-    .quote .stars{font-weight:950;letter-spacing:1px}
-    .quote .txt{margin:8px 0;color:#334155;line-height:1.45}
-    .quote .who{margin-top:10px;color:var(--muted);font-size:13px}
-
-    .faq details{border:1px solid var(--border);border-radius:14px;padding:12px 12px;background:#fff}
-    .faq details+details{margin-top:10px}
-    .faq summary{font-weight:950;cursor:pointer}
-
-    footer{border-top:1px solid var(--border);padding:20px 0;color:var(--muted);font-size:13px}
+    .section{padding:28px 0}
+    .grid2{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px
+    }
+    @media(max-width:900px){.grid2{grid-template-columns:1fr}}
+    .price{font-size:32px;font-weight:900}
+    .check{color:var(--good);font-weight:900;margin-right:6px}
+    .btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btnPay{
+      background:var(--dark);color:#fff;
+      padding:10px 14px;border-radius:12px;
+      font-weight:900
+    }
+    .testi{
+      background:#fff;border:1px solid var(--border);
+      border-radius:16px;padding:14px
+    }
+    footer{
+      border-top:1px solid var(--border);
+      padding:20px 0;color:var(--muted);
+      font-size:13px
+    }
   </style>
 </head>
+
 <body>
 
 <header>
-  <div class="wrap">
-    <div class="nav">
-      <div class="brand">Pilates Essencial</div>
-      <div class="navRight">
-        <a class="btnGhost" href="#packs">Packs</a>
-        <a class="btnGhost" href="#testemunhos">Testemunhos</a>
-        <a class="btn" href="#contacto">Contacto</a>
-      </div>
+  <div class="wrap nav">
+    <div class="brand">
+      <img src="assets/coach-lrstudio.jpeg" alt="LR Studio">
+      <span>LR Studio</span>
     </div>
+    <a class="btn" href="#packs">Ver planos</a>
   </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="wrap">
-      <div class="heroGrid">
-        <div>
-          <div class="kicker">Plano de Pilates</div>
-          <h1>Pilates Essencial — 8 semanas para te sentires mais forte e leve</h1>
-          <p class="sub">
-            Treinos simples em casa, guiados passo-a-passo. Ideal para melhorar postura, mobilidade e fortalecer o core.
-          </p>
-          <div class="btnRow">
-            <a class="btn" href="#packs">Ver packs</a>
-            <a class="btnGhost" href="#faq">Perguntas</a>
-          </div>
-          <div class="pillRow">
-            <span class="pill">Em casa</span>
-            <span class="pill">20–35 min</span>
-            <span class="pill">3x / semana</span>
-            <span class="pill">Nível: iniciantes</span>
-          </div>
-        </div>
 
-        <div class="card">
-          <p class="miniTitle">O que vais conseguir</p>
-          <ul class="list">
-            <li>Mais estabilidade do core e menos tensão nas costas</li>
-            <li>Melhor postura e mobilidade</li>
-            <li>Rotina sustentável e progressiva</li>
-            <li>Mais energia no dia a dia</li>
-          </ul>
-          <div style="height:10px"></div>
-          <div class="small muted">Sem pressão: progressivo e adaptável ao teu ritmo.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="packs">
-    <div class="wrap">
-      <h2 class="h2">Escolhe o teu pack</h2>
-      <p class="muted">Dois níveis — autónomo ou com acompanhamento — para se adaptar ao teu objetivo.</p>
-
-      <div class="grid2" style="margin-top:14px">
-        <!-- Pack 1 -->
-        <div class="card">
-          <h3 style="margin:0;font-size:18px;font-weight:950">Pilates Essencial</h3>
-
-          <div class="price">39€</div>
-          <div class="per">Acesso 8 semanas</div>
-
-          <div class="whoBox">
-            <div class="whoTitle">Para quem é</div>
-            <ul class="whoList">
-              <li>Para quem quer começar Pilates com segurança</li>
-              <li>Para quem prefere treinar de forma autónoma</li>
-              <li>Para quem quer melhorar postura, mobilidade e core</li>
-            </ul>
-          </div>
-
-          <div style="margin-top:12px">
-            <div><span class="check">✓</span>Plano 8 semanas (3 treinos/semana)</div>
-            <div style="margin-top:8px"><span class="check">✓</span>Vídeos guiados + calendário</div>
-            <div style="margin-top:8px"><span class="check">✓</span>PDF aquecimento + alongamentos</div>
-            <div style="margin-top:8px"><span class="check">✓</span>Acesso simples no telemóvel</div>
-          </div>
-
-          <div class="btnRow">
-            <a class="btn" id="waEssencial" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btnPay" id="payEssencial" target="_blank" rel="noopener">Pagar (MB WAY / Cartão)</a>
-          </div>
-
-          <div class="small muted" style="margin-top:10px">Ideal se queres começar já, com autonomia.</div>
-        </div>
-
-        <!-- Pack 2 -->
-        <div class="card" style="border:2px solid var(--badgeBd)">
-          <h3 style="margin:0;font-size:18px;font-weight:950">
-            Pilates Essencial Plus <span class="badge">Mais escolhido</span>
-          </h3>
-
-          <div class="price">79€</div>
-          <div class="per">Acesso 8 semanas + acompanhamento</div>
-
-          <div class="whoBox">
-            <div class="whoTitle">Para quem é</div>
-            <ul class="whoList">
-              <li>Para quem quer resultados mais rápidos</li>
-              <li>Para quem precisa de motivação e acompanhamento</li>
-              <li>Para quem quer um plano adaptado ao seu corpo</li>
-            </ul>
-          </div>
-
-          <div style="margin-top:12px">
-            <div><span class="check">✓</span>Tudo do Essencial</div>
-            <div style="margin-top:8px"><span class="check">✓</span>Plano adaptado (objetivo + nível)</div>
-            <div style="margin-top:8px"><span class="check">✓</span>Check-in semanal (mensagem)</div>
-            <div style="margin-top:8px"><span class="check">✓</span>Suporte prioritário (24h)</div>
-          </div>
-
-          <div class="btnRow">
-            <a class="btn" id="waPlus" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btnPay" id="payPlus" target="_blank" rel="noopener">Pagar (MB WAY / Cartão)</a>
-          </div>
-
-          <div class="small muted" style="margin-top:10px">Para quem quer mais motivação e um plano ajustado ao seu corpo.</div>
-        </div>
-      </div>
-
-      <p class="muted small" style="margin-top:10px">
-        No checkout, o cliente pode escolher MB WAY ou Cartão (depende dos métodos ativos no Stripe).
+<section class="hero">
+  <div class="wrap heroGrid">
+    <div>
+      <h1>Pilates Essencial</h1>
+      <p class="muted">
+        Plano de Pilates de 8 semanas para melhorar postura,
+        mobilidade e fortalecer o core — em casa, ao teu ritmo.
       </p>
-    </div>
-  </section>
 
-  <section class="section" id="testemunhos">
-    <div class="wrap">
-      <h2 class="h2">Testemunhos</h2>
-      <p class="muted small">Frases de exemplo (substitui por feedback real quando tiveres).</p>
-      <div class="testiGrid">
-        <div class="quote">
-          <div class="stars">★★★★★</div>
-          <div class="txt">“Em 2 semanas já senti a postura mais direita e menos tensão lombar. As aulas são fáceis de seguir.”</div>
-          <div class="who">— Aluna</div>
-        </div>
-        <div class="quote">
-          <div class="stars">★★★★★</div>
-          <div class="txt">“Sessões curtas mas eficazes. Consigo encaixar na rotina e sinto o core mais forte.”</div>
-          <div class="who">— Aluna</div>
-        </div>
-        <div class="quote">
-          <div class="stars">★★★★★</div>
-          <div class="txt">“O acompanhamento ajudou-me a manter a consistência. Senti melhorias na mobilidade e postura.”</div>
-          <div class="who">— Aluna</div>
-        </div>
+      <div class="pillRow">
+        <span class="pill">Em casa</span>
+        <span class="pill">3x / semana</span>
+        <span class="pill">20–35 min</span>
+        <span class="pill">Iniciantes</span>
       </div>
     </div>
-  </section>
 
-  <section class="section" id="faq">
-    <div class="wrap">
-      <h2 class="h2">Perguntas frequentes</h2>
-
-      <div class="faq" style="margin-top:12px">
-        <details>
-          <summary>Preciso de material?</summary>
-          <div class="muted" style="margin-top:8px">Não. Um tapete já chega. Se tiveres, uma banda elástica é opcional.</div>
-        </details>
-        <details>
-          <summary>É para iniciantes?</summary>
-          <div class="muted" style="margin-top:8px">Sim. O plano é progressivo e inclui instruções para adaptar os exercícios.</div>
-        </details>
-        <details>
-          <summary>Como recebo o plano?</summary>
-          <div class="muted" style="margin-top:8px">Recebes um link com acesso aos conteúdos e calendário (no telemóvel ou computador).</div>
-        </details>
-        <details>
-          <summary>Posso falar contigo antes de comprar?</summary>
-          <div class="muted" style="margin-top:8px">Claro. Envia mensagem e eu ajudo-te a escolher o pack ideal.</div>
-        </details>
-      </div>
+    <div class="card">
+      <strong>O que vais conseguir</strong>
+      <ul>
+        <li>Mais estabilidade do core</li>
+        <li>Menos tensão lombar</li>
+        <li>Melhor postura</li>
+        <li>Mais energia no dia a dia</li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section" id="contacto">
-    <div class="wrap">
+<section class="section" id="packs">
+  <div class="wrap">
+    <h2>Escolhe o teu plano</h2>
+
+    <div class="grid2">
+
+      <!-- Essencial -->
       <div class="card">
-        <h2 class="h2">Contacto</h2>
-        <p class="muted">
-          Envia mensagem no WhatsApp ou Instagram. Eu respondo e combinamos o melhor pack para ti.
-        </p>
+        <h3>Pilates Essencial</h3>
+        <div class="price">39€</div>
+
+        <p class="muted">Plano autónomo — 8 semanas</p>
+
+        <div>
+          <div><span class="check">✓</span>3 treinos por semana</div>
+          <div><span class="check">✓</span>Vídeos guiados</div>
+          <div><span class="check">✓</span>PDF aquecimento + alongamentos</div>
+        </div>
 
         <div class="btnRow">
-          <a class="btn" id="waGeral" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btnGhost" id="insta" target="_blank" rel="noopener">Instagram</a>
+          <a class="btnPay" id="payEssencial" target="_blank">Pagar (MB WAY / Cartão)</a>
+          <a class="btn" id="waEssencial" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Plus -->
+      <div class="card">
+        <h3>Pilates Essencial Plus</h3>
+        <div class="price">79€</div>
+
+        <p class="muted">Plano + acompanhamento</p>
+
+        <div>
+          <div><span class="check">✓</span>Tudo do Essencial</div>
+          <div><span class="check">✓</span>Plano adaptado</div>
+          <div><span class="check">✓</span>Check-in semanal</div>
         </div>
 
-        <p class="muted small" style="margin-top:12px">
-          *Se o MB WAY não aparecer no checkout, é porque ainda não está ativo nesse link Stripe.
-        </p>
+        <div class="btnRow">
+          <a class="btnPay" id="payPlus" target="_blank">Pagar (MB WAY / Cartão)</a>
+          <a class="btn" id="waPlus" target="_blank">WhatsApp</a>
+        </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Testemunhos</h2>
+
+    <div class="grid2">
+      <div class="testi">★★★★★ “Senti melhorias logo nas primeiras semanas.”</div>
+      <div class="testi">★★★★★ “Aulas simples e eficazes. Recomendo!”</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap card">
+    <h2>Contacto</h2>
+    <p class="muted">Fala comigo no WhatsApp ou Instagram.</p>
+
+    <div class="btnRow">
+      <a class="btn" id="waGeral" target="_blank">WhatsApp</a>
+      <a class="btn" id="insta" target="_blank">Instagram</a>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -319,35 +213,26 @@
 </footer>
 
 <script>
-  // WhatsApp do contacto (sem + e sem espaços)
-  const WHATSAPP_CONTACT = "351911918049";
-
-  // Instagram
-  const INSTAGRAM_URL = "https://www.instagram.com/lrstudio_pt?ighs=dWx2Yng0MWw4bWU4";
-
-  // ✅ Colar aqui os Payment Links do Stripe (cada um com MB WAY ativado)
+  const WHATSAPP = "351911918049";
   const STRIPE_ESSENCIAL = "https://buy.stripe.com/REPLACE_39";
-  const STRIPE_PLUS      = "https://buy.stripe.com/REPLACE_79";
+  const STRIPE_PLUS = "https://buy.stripe.com/REPLACE_79";
+  const INSTAGRAM = "https://www.instagram.com/lrstudio_pt?ighs=dWx2Yng0MWw4bWU4";
 
-  function waLink(message){
-    return "https://wa.me/" + WHATSAPP_CONTACT + "?text=" + encodeURIComponent(message);
+  function wa(msg){
+    return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
   }
 
-  // WhatsApp links
-  document.getElementById("waEssencial").href = waLink("Olá! Quero o pack Pilates Essencial (39€).");
-  document.getElementById("waPlus").href      = waLink("Olá! Quero o pack Pilates Essencial Plus (79€).");
-  document.getElementById("waGeral").href     = waLink("Olá! Quero saber mais sobre os packs Pilates Essencial.");
+  document.getElementById("waEssencial").href = wa("Olá! Quero o plano Pilates Essencial (39€).");
+  document.getElementById("waPlus").href = wa("Olá! Quero o plano Pilates Essencial Plus (79€).");
+  document.getElementById("waGeral").href = wa("Olá! Quero saber mais sobre os planos Pilates.");
 
-  // Instagram link
-  document.getElementById("insta").href = INSTAGRAM_URL;
-
-  // Stripe payment links
   document.getElementById("payEssencial").href = STRIPE_ESSENCIAL;
-  document.getElementById("payPlus").href      = STRIPE_PLUS;
+  document.getElementById("payPlus").href = STRIPE_PLUS;
 
-  // Footer
-  const year = new Date().getFullYear();
-  document.getElementById("footer").textContent = `© ${year} LR Studio — Todos os direitos reservados.`;
+  document.getElementById("insta").href = INSTAGRAM;
+
+  document.getElementById("footer").textContent =
+    "© " + new Date().getFullYear() + " LR Studio — Todos os direitos reservados.";
 </script>
 
 </body>
