@@ -1,95 +1,55 @@
 <!doctype html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LR Studio — Packs</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Packs — LR Studio</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
 <header>
-  <div class="wrap">
-    <div class="nav">
-      <div class="brand">
-        <img src="coach-lrstudio.jpeg" alt="LR Studio">
-        <span>LR Studio</span>
-      </div>
+  <div class="wrap nav">
+    <div class="brand">
+      <img src="../coach-lrstudio.jpeg">
+      LR Studio
+    </div>
 
-      <div class="navRight desktopMenu">
-        <a class="btnGhost" href="packs.html">Packs</a>
-        <a class="btnGhost" href="testemunhos.html">Testemunhos</a>
-        <a class="btn" href="contacto.html">Contacto</a>
-      </div>
+    <nav class="menu">
+      <a href="../packs">Packs</a>
+      <a href="../testemunhos">Testemunhos</a>
+      <a href="../contacto" class="cta">Contacto</a>
+    </nav>
 
-      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
-      <div class="mobileMenu" id="mobileMenu">
-        <a href="packs.html">Packs</a>
-        <a href="testemunhos.html">Testemunhos</a>
-        <a href="contacto.html" class="cta">Contacto</a>
-      </div>
+    <button class="burger" id="burger">☰</button>
+    <div class="mobile" id="mobile">
+      <a href="../packs">Packs</a>
+      <a href="../testemunhos">Testemunhos</a>
+      <a href="../contacto" class="cta">Contacto</a>
     </div>
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <div class="kicker">Plano de Pilates</div>
-      <h1>Escolhe o pack ideal</h1>
-      <p class="muted" style="max-width:760px;line-height:1.6">
-        Podes pagar no checkout com <strong>MB WAY</strong> ou <strong>Cartão</strong>.
-      </p>
-
-      <div class="section">
-        <div class="grid2">
-
-          <div class="card">
-            <h2 style="margin:0">Pilates Essencial</h2>
-            <div class="price">39€</div>
-            <div class="per">Acesso 8 semanas</div>
-
-            <div style="margin-top:12px">
-              <div><span class="check">✓</span>3 treinos/semana</div>
-              <div style="margin-top:8px"><span class="check">✓</span>Vídeos guiados + calendário</div>
-              <div style="margin-top:8px"><span class="check">✓</span>Aquecimento + alongamentos</div>
-            </div>
-
-            <div class="btnRow">
-              <a class="btnPay" id="payEssencial" target="_blank" rel="noopener">Pagar (MB WAY / Cartão)</a>
-              <a class="btn" id="waEssencial" target="_blank" rel="noopener">WhatsApp</a>
-            </div>
-          </div>
-
-          <div class="card" style="border:2px solid var(--badgeBd)">
-            <h2 style="margin:0">Pilates Essencial Plus <span class="badge">Mais escolhido</span></h2>
-            <div class="price">79€</div>
-            <div class="per">Acesso 8 semanas + acompanhamento</div>
-
-            <div style="margin-top:12px">
-              <div><span class="check">✓</span>Tudo do Essencial</div>
-              <div style="margin-top:8px"><span class="check">✓</span>Plano adaptado</div>
-              <div style="margin-top:8px"><span class="check">✓</span>Check-in semanal</div>
-              <div style="margin-top:8px"><span class="check">✓</span>Suporte prioritário</div>
-            </div>
-
-            <div class="btnRow">
-              <a class="btnPay" id="payPlus" target="_blank" rel="noopener">Pagar (MB WAY / Cartão)</a>
-              <a class="btn" id="waPlus" target="_blank" rel="noopener">WhatsApp</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <p class="muted small">
-        *Se o MB WAY não aparecer no checkout, é porque ainda não está ativo no Payment Link do Stripe.
-      </p>
+<main class="hero">
+  <div class="wrap grid">
+    <div class="card">
+      <h2>Pilates Essencial</h2>
+      <p class="muted">8 semanas — 39€</p>
+      <a class="btn">Pagar (MB Way / Cartão)</a>
     </div>
-  </section>
+
+    <div class="card">
+      <h2>Pilates Essencial Plus</h2>
+      <p class="muted">8 semanas + acompanhamento — 79€</p>
+      <a class="btn">Pagar (MB Way / Cartão)</a>
+    </div>
+  </div>
 </main>
 
-<footer><div class="wrap" id="footer"></div></footer>
-<script src="script.js"></script>
+<footer>
+  <div class="wrap" id="footer"></div>
+</footer>
+
+<script src="../script.js"></script>
 </body>
 </html>
