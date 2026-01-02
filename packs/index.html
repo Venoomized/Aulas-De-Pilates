@@ -11,22 +11,24 @@
 <header>
   <div class="wrap">
     <div class="nav">
-      <div class="brand">
+      <a class="brand" href="../">
         <img src="../coach-lrstudio.jpeg" alt="LR Studio">
         <span>LR Studio</span>
-      </div>
+      </a>
 
       <div class="navRight desktopMenu">
-        <a class="btnGhost" href="../packs/">Packs</a>
-        <a class="btnGhost" href="../testemunhos/">Testemunhos</a>
-        <a class="btn" href="../contacto/">Contacto</a>
+        <a class="linkPill" data-nav="home" href="../">Início</a>
+        <a class="linkPill" data-nav="packs" href="../packs/">Packs</a>
+        <a class="linkPill" data-nav="testemunhos" href="../testemunhos/">Testemunhos</a>
+        <a class="btn" data-nav="contacto" href="../contacto/">Contacto</a>
       </div>
 
       <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">☰</button>
       <div class="mobileMenu" id="mobileMenu">
-        <a href="../packs/">Packs</a>
-        <a href="../testemunhos/">Testemunhos</a>
-        <a href="../contacto/" class="cta">Contacto</a>
+        <a data-nav="home" href="../">Início</a>
+        <a data-nav="packs" href="../packs/">Packs</a>
+        <a data-nav="testemunhos" href="../testemunhos/">Testemunhos</a>
+        <a data-nav="contacto" href="../contacto/" class="cta">Contacto</a>
       </div>
     </div>
   </div>
@@ -35,16 +37,17 @@
 <main>
   <section class="hero">
     <div class="wrap">
-      <div class="kicker">Plano de Pilates</div>
-      <h1>Escolhe o teu pack</h1>
-      <p class="muted" style="max-width:820px;line-height:1.55">
+      <div class="kicker reveal">Plano de Pilates</div>
+      <h1 class="reveal">Escolhe o teu pack</h1>
+      <p class="muted reveal" style="max-width:820px;line-height:1.55">
         Dois níveis — autónomo ou com acompanhamento — para se adaptar ao teu objetivo.
         Pagamento via Stripe (Cartão e, se ativo, MB WAY no checkout).
       </p>
 
       <div class="section">
         <div class="grid2">
-          <div class="card">
+          <!-- ESSENCIAL -->
+          <div class="card reveal">
             <h2 style="margin:0;font-size:18px;font-weight:950">Pilates Essencial</h2>
             <div class="price">39€</div>
             <div class="per">Acesso 8 semanas</div>
@@ -66,7 +69,8 @@
             </p>
           </div>
 
-          <div class="card glow">
+          <!-- PLUS -->
+          <div class="card glow reveal">
             <h2 style="margin:0;font-size:18px;font-weight:950">
               Pilates Essencial Plus <span class="badge">Mais escolhido</span>
             </h2>
@@ -91,13 +95,29 @@
           </div>
         </div>
 
-        <p class="muted small" style="margin-top:12px">
-          *Se o MB WAY não aparecer no checkout, é porque ainda não está ativo no Payment Link do Stripe.
-        </p>
+        <div style="height:14px"></div>
+
+        <div class="card white reveal">
+          <h2 class="h2">Como escolher?</h2>
+          <ul class="list">
+            <li><strong>Essencial</strong> — queres rotina simples e autonomia.</li>
+            <li><strong>Plus</strong> — queres acompanhamento e ajustes semanais.</li>
+          </ul>
+          <div class="btnRow">
+            <a class="btnGhost" href="../testemunhos/">Ver testemunhos</a>
+            <a class="btn" id="waGeral" target="_blank" rel="noopener">Tirar dúvidas no WhatsApp</a>
+          </div>
+          <p class="muted small" style="margin-top:10px">
+            *Se o MB WAY não aparecer no checkout, é porque ainda não está ativo no Payment Link do Stripe.
+          </p>
+        </div>
       </div>
+
     </div>
   </section>
 </main>
+
+<button id="toTop" aria-label="Voltar ao topo">Topo ↑</button>
 
 <footer>
   <div class="wrap" id="footer"></div>
